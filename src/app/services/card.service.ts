@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { Card } from '../models/card.model';
+import { Tag } from '../models/tag.model';
 
 @Injectable({
   providedIn: 'root'
@@ -13,17 +15,17 @@ export class CardService {
 
   /**
    * Fetch all cards from the server
-   * @returns {Observable<any[]>} An observable of card data
+   * @returns {Observable<Card[]>} An observable of card data
    */
-  getCards(): Observable<any[]> {
-    return this.http.get<any[]>(this.apiUrl);
+  getCards(): Observable<Card[]> {
+    return this.http.get<Card[]>(this.apiUrl);
   }
 
   /**
    * Fetch all tags from the server
-   * @returns {Observable<any[]>} An observable of tag data
+   * @returns {Observable<Tag[]>} An observable of tag data
    */
-  getTags(): Observable<any[]> {
-    return this.http.get<any[]>(this.tagsUrl);
+  getTags(): Observable<Tag[]> {
+    return this.http.get<Tag[]>(this.tagsUrl);
   }
 }
