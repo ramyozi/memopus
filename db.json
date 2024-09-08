@@ -1,0 +1,25 @@
+{
+  "users": [
+    { "id": 1, "login": "y", "pwd": "y" }
+  ],
+  "tags": [
+    { "id": 1, "label": "Git" },
+    { "id": 2, "label": "Angular" },
+    { "id": 3, "label": "React" }
+  ],
+  "columns": [
+    { "id": 1, "label": "To Do", "order": 1 },
+    { "id": 2, "label": "In Progress", "order": 2 },
+    { "id": 3, "label": "Done", "order": 3 }
+  ],
+  "cards": [
+    {
+      "id": 1,
+      "question": "What is Angular?",
+      "answer": "A platform for building web applications.",
+      "description": "Basic information about Angular.",
+      "tag": 1,
+      "column": 1
+    }
+  ]
+}
