@@ -7,6 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class CardService {
   private apiUrl = 'http://localhost:3000/cards';
+  private tagsUrl = 'http://localhost:3000/tags';
 
   constructor(private http: HttpClient) {}
 
@@ -16,5 +17,13 @@ export class CardService {
    */
   getCards(): Observable<any[]> {
     return this.http.get<any[]>(this.apiUrl);
+  }
+
+  /**
+   * Fetch all tags from the server
+   * @returns {Observable<any[]>} An observable of tag data
+   */
+  getTags(): Observable<any[]> {
+    return this.http.get<any[]>(this.tagsUrl);
   }
 }
