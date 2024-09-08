@@ -2,7 +2,7 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
 import { CardService } from '../../services/card.service';
-import {Tag} from "../../models/tag.model";
+import { Tag } from '../../models/tag.model';
 
 @Component({
   selector: 'app-tags',
@@ -27,7 +27,7 @@ export class TagsComponent implements OnInit {
    * Fetch tags from the CardService
    */
   fetchTags(): void {
-    this.cardService.getTags().subscribe((data) => {
+    this.cardService.getTags().subscribe((data: Tag[]) => {
       this.tags = data;
     });
   }
@@ -42,6 +42,21 @@ export class TagsComponent implements OnInit {
     } else {
       this.selectedTags.add(tagId);
     }
+    this.emitTagSelection();
+  }
+
+  /**
+   * Emit the selected tags as an array to the parent component
+   */
+  private emitTagSelection(): void {
     this.tagSelectionChanged.emit(Array.from(this.selectedTags));
+  }
+
+  /**
+   * Reset selected tags and emit an empty array to clear filters
+   */
+  resetSelections(): void {
+    this.selectedTags.clear();
+    this.emitTagSelection();
   }
 }
