@@ -3,9 +3,15 @@
     { "id": 1, "login": "y", "pwd": "y" }
   ],
   "tags": [
-    { "id": 1, "label": "Git" },
-    { "id": 2, "label": "Angular" },
-    { "id": 3, "label": "React" }
+    { "id": 1, "label": "JavaScript" },
+    { "id": 2, "label": "Python" },
+    { "id": 3, "label": "HTML" },
+    { "id": 4, "label": "CSS" },
+    { "id": 5, "label": "Angular" },
+    { "id": 6, "label": "React" },
+    { "id": 7, "label": "Node.js" },
+    { "id": 8, "label": "SQL" },
+    { "id": 9, "label": "Docker" }
   ],
   "columns": [
     { "id": 1, "label": "To Do", "order": 1 },
@@ -15,10 +21,82 @@
   "cards": [
     {
       "id": 1,
-      "question": "What is Angular?",
-      "answer": "A platform for building web applications.",
-      "description": "Basic information about Angular.",
+      "question": "Qu'est-ce que le 'hoisting' en JavaScript?",
+      "answer": "Le 'hoisting' est un comportement de JavaScript où les déclarations de variables et de fonctions sont déplacées en haut de leur contexte d'exécution lors de la compilation.",
+      "description": "Concept fondamental en JavaScript concernant l'ordre de traitement des variables et fonctions.",
       "tag": 1,
+      "column": 1
+    },
+    {
+      "id": 2,
+      "question": "Comment déclare-t-on une fonction en Python?",
+      "answer": "On utilise le mot-clé 'def' suivi du nom de la fonction et des parenthèses.",
+      "description": "Méthode de déclaration de fonctions en Python.",
+      "tag": 2,
+      "column": 1
+    },
+    {
+      "id": 3,
+      "question": "Quelle est la différence entre '==' et '===' en JavaScript?",
+      "answer": "'==' compare les valeurs après conversion de type, tandis que '===' compare les valeurs et les types sans conversion.",
+      "description": "Différence entre les comparaisons en JavaScript.",
+      "tag": 1,
+      "column": 1
+    },
+    {
+      "id": 4,
+      "question": "Comment créer un lien hypertexte en HTML?",
+      "answer": "On utilise la balise <a> avec l'attribut 'href'.",
+      "description": "Création de liens hypertextes en HTML.",
+      "tag": 3,
+      "column": 1
+    },
+    {
+      "id": 5,
+      "question": "Qu'est-ce que Flexbox en CSS?",
+      "answer": "Flexbox est un module de disposition en CSS qui permet de concevoir des mises en page flexibles.",
+      "description": "Technique de mise en page moderne en CSS.",
+      "tag": 4,
+      "column": 1
+    },
+    {
+      "id": 6,
+      "question": "À quoi sert le composant 'Router' en Angular?",
+      "answer": "Le composant 'Router' est utilisé pour la navigation entre les différentes vues de l'application Angular.",
+      "description": "Concept de navigation en Angular.",
+      "tag": 5,
+      "column": 1
+    },
+    {
+      "id": 7,
+      "question": "Comment gérer l'état dans une application React?",
+      "answer": "En utilisant des hooks comme useState et useReducer ou des bibliothèques comme Redux.",
+      "description": "Gestion de l'état dans les applications React.",
+      "tag": 6,
+      "column": 1
+    },
+    {
+      "id": 8,
+      "question": "Qu'est-ce que 'npm' et à quoi sert-il dans Node.js?",
+      "answer": "'npm' est le gestionnaire de paquets par défaut de Node.js, utilisé pour installer des modules.",
+      "description": "Gestion des modules et paquets avec npm.",
+      "tag": 7,
+      "column": 1
+    },
+    {
+      "id": 9,
+      "question": "Qu'est-ce qu'une jointure (JOIN) en SQL?",
+      "answer": "Une jointure est utilisée pour combiner des lignes de deux ou plusieurs tables, basées sur une condition commune.",
+      "description": "Concept fondamental pour interroger des bases de données relationnelles.",
+      "tag": 8,
+      "column": 1
+    },
+    {
+      "id": 10,
+      "question": "Comment créer une image Docker à partir d'un Dockerfile?",
+      "answer": "On utilise la commande 'docker build' suivie du chemin vers le Dockerfile.",
+      "description": "Création d'images Docker avec Dockerfile.",
+      "tag": 9,
       "column": 1
     }
   ]
