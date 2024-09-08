@@ -1,4 +1,5 @@
-<div class="card-container row">
+<div class="card-container row"
+     [style.gridTemplateColumns]="'repeat(' + columns + ', 1fr)'">
   <div *ngFor="let card of filteredCards" class="col-md-4 mb-4">
     <mat-card class="card">
       <mat-card-title (click)="toggleAnswer(card)" class="clickable">
