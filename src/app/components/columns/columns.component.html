@@ -5,7 +5,7 @@
       <mat-card *ngFor="let card of getCardsForColumn(column.id)"
                 class="card"
                 draggable="true"
-      (dragstart)="onDragStart($event, card)">
+                (dragstart)="onDragStart($event, card)">
         <mat-card-title (click)="toggleAnswer(card)" class="clickable">{{ card.question }}</mat-card-title>
         <mat-card-content>
           <p>{{ card.description }}</p>

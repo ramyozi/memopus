@@ -5,6 +5,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { CardService } from '../../services/card.service';
 import { Card } from '../../models/card.model';
 import { Column } from '../../models/column.model';
+import {ColumnService} from "../../services/column.service";
 
 @Component({
   selector: 'app-columns',
@@ -18,7 +19,7 @@ export class ColumnsComponent implements OnInit {
   cards: Card[] = [];
   columns: Column[] = [];
 
-  constructor(private cardService: CardService) {}
+  constructor(private cardService: CardService, private columnService: ColumnService) {}
 
   ngOnInit(): void {
     this.fetchCards();
@@ -38,11 +39,10 @@ export class ColumnsComponent implements OnInit {
    * Fetch columns from the CardService
    */
   fetchColumns(): void {
-    this.cardService.getColumns().subscribe((data: Column[]) => {
+    this.columnService.getColumns().subscribe((data: Column[]) => {
       this.columns = data;
     });
   }
-
   /**
    * Move a card to a different column
    * @param {Card} card - The card to move
@@ -50,7 +50,17 @@ export class ColumnsComponent implements OnInit {
    */
   moveCard(card: Card, columnId: number): void {
     card.column = columnId;
-    this.cardService.updateCardColumn(card.id, columnId).subscribe();
+    this.cardService.updateCardColumn(card.id, columnId).subscribe(
+      (updatedCard) => {
+        const index = this.cards.findIndex(c => c.id === updatedCard.id);
+        if (index > -1) {
+          this.cards[index] = updatedCard;
+        }
+      },
+      (error) => {
+        console.error('Failed to update card column', error);
+      }
+    );
   }
 
   /**
@@ -69,6 +79,7 @@ export class ColumnsComponent implements OnInit {
    */
   onDragStart(event: DragEvent, card: Card): void {
     event.dataTransfer?.setData('text/plain', card.id.toString());
+    event.dataTransfer!.effectAllowed = 'move';
   }
 
   /**
@@ -89,10 +100,13 @@ export class ColumnsComponent implements OnInit {
     event.preventDefault();
     const cardId = event.dataTransfer?.getData('text/plain');
     if (cardId) {
+      console.log(`Moving card ${cardId} to column ${columnId}`);
       const card = this.cards.find(c => c.id === +cardId);
       if (card && card.column !== columnId) {
         this.moveCard(card, columnId);
       }
+    } else {
+      console.error('Failed to get card ID from data transfer');
     }
   }
 

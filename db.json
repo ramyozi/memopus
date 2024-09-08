@@ -1,23 +1,4 @@
 {
-  "users": [
-    { "id": 1, "login": "y", "pwd": "y" }
-  ],
-  "tags": [
-    { "id": 1, "label": "JavaScript" },
-    { "id": 2, "label": "Python" },
-    { "id": 3, "label": "HTML" },
-    { "id": 4, "label": "CSS" },
-    { "id": 5, "label": "Angular" },
-    { "id": 6, "label": "React" },
-    { "id": 7, "label": "Node.js" },
-    { "id": 8, "label": "SQL" },
-    { "id": 9, "label": "Docker" }
-  ],
-  "columns": [
-    { "id": 1, "label": "To Do", "order": 1 },
-    { "id": 2, "label": "In Progress", "order": 2 },
-    { "id": 3, "label": "Done", "order": 3 }
-  ],
   "cards": [
     {
       "id": 1,
@@ -99,5 +80,24 @@
       "tag": 9,
       "column": 1
     }
+  ],
+  "users": [
+    { "id": 1, "login": "y", "pwd": "y" }
+  ],
+  "tags": [
+    { "id": 1, "label": "JavaScript" },
+    { "id": 2, "label": "Python" },
+    { "id": 3, "label": "HTML" },
+    { "id": 4, "label": "CSS" },
+    { "id": 5, "label": "Angular" },
+    { "id": 6, "label": "React" },
+    { "id": 7, "label": "Node.js" },
+    { "id": 8, "label": "SQL" },
+    { "id": 9, "label": "Docker" }
+  ],
+  "columns": [
+    { "id": 1, "label": "To Do", "order": 1 },
+    { "id": 2, "label": "In Progress", "order": 2 },
+    { "id": 3, "label": "Done", "order": 3 }
   ]
 }
