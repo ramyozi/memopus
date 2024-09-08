@@ -1,0 +1,10 @@
+<div class="card-container row">
+  <div *ngFor="let card of cards" class="col-md-4 mb-4">
+    <mat-card class="card">
+      <mat-card-title>{{ card.question }}</mat-card-title>
+      <mat-card-content>
+        <p>{{ card.description }}</p>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
