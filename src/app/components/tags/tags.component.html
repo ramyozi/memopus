@@ -1,8 +1,11 @@
 <div class="tags-container">
-  <button mat-button *ngFor="let tag of tags"
-          [class.selected]="selectedTags.has(tag.id)"
-          (click)="toggleTagSelection(tag.id)">
-    {{ tag.label }}
-  </button>
-  <button mat-button color="warn" (click)="resetSelections()">Reset Filters</button>
+  <div *ngIf="error" class="error-message">{{ error }}</div>
+  <div *ngIf="!error">
+    <button mat-button *ngFor="let tag of tags"
+            [class.selected]="selectedTags.has(tag.id)"
+            (click)="toggleTagSelection(tag.id)">
+      {{ tag.label }}
+    </button>
+    <button mat-button color="warn" (click)="resetSelections()">Reset Filters</button>
+  </div>
 </div>

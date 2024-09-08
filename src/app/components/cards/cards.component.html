@@ -1,5 +1,6 @@
+<div *ngIf="error" class="error-message">{{ error }}</div>
 <div class="card-container row"
-     [style.grid-template-columns]="'repeat(' + columns + ', 1fr)'">  <!-- Correct property name -->
+     [style.grid-template-columns]="'repeat(' + columns + ', 1fr)'">
   <div *ngFor="let card of filteredCards" class="col-md-4 mb-4">
     <mat-card class="card">
       <mat-card-title (click)="toggleAnswer(card)" class="clickable">

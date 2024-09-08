@@ -15,6 +15,7 @@ import {MatButton} from "@angular/material/button";
 export class CardsComponent implements OnInit, OnChanges {
   cards: Card[] = [];
   filteredCards: Card[] = [];
+  error: string | null = null;
 
   @Input() selectedTags: number[] = [];
   @Input() columns: number = 3;
@@ -35,11 +36,19 @@ export class CardsComponent implements OnInit, OnChanges {
    * Fetch cards from the CardService
    */
   fetchCards(): void {
-    this.cardService.getCards().subscribe((data: Card[]) => {
-      this.cards = data.map(card => ({ ...card, showAnswer: false }));
-      this.filterCards();
-    });
+    this.cardService.getCards().subscribe(
+      (data: Card[]) => {
+        this.cards = data.map(card => ({ ...card, showAnswer: false }));
+        this.filterCards();
+        this.error = this.cards.length === 0 ? 'Aucune carte disponible.' : null;  // Message if no cards
+      },
+      (error) => {
+        this.error = 'Échec du chargement des cartes. Veuillez réessayer plus tard.';
+        console.error('Error fetching cards:', error);
+      }
+    );
   }
+
 
   /**
    * Filter cards based on selected tags

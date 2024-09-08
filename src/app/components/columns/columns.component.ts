@@ -18,6 +18,7 @@ export class ColumnsComponent implements OnInit {
   @Input() selectedTags: number[] = [];
   cards: Card[] = [];
   columns: Column[] = [];
+  error: string | null = null;
 
   constructor(private cardService: CardService, private columnService: ColumnService) {}
 
@@ -30,19 +31,34 @@ export class ColumnsComponent implements OnInit {
    * Fetch cards from the CardService
    */
   fetchCards(): void {
-    this.cardService.getCards().subscribe((data: Card[]) => {
-      this.cards = data.map(card => ({ ...card, showAnswer: false }));
-    });
+    this.cardService.getCards().subscribe(
+      (data: Card[]) => {
+        this.cards = data.map(card => ({ ...card, showAnswer: false }));
+        this.error = null;
+      },
+      (error) => {
+        this.error = 'Échec du chargement des cartes. Veuillez réessayer plus tard.';
+        console.error('Error fetching cards:', error);
+      }
+    );
   }
 
   /**
    * Fetch columns from the CardService
    */
   fetchColumns(): void {
-    this.columnService.getColumns().subscribe((data: Column[]) => {
-      this.columns = data;
-    });
+    this.columnService.getColumns().subscribe(
+      (data: Column[]) => {
+        this.columns = data;
+        this.error = this.columns.length === 0 ? 'Aucune colonne disponible.' : null;  // Message if no columns
+      },
+      (error) => {
+        this.error = 'Échec du chargement des colonnes. Veuillez réessayer plus tard.';
+        console.error('Error fetching columns:', error);
+      }
+    );
   }
+
   /**
    * Move a card to a different column
    * @param {Card} card - The card to move

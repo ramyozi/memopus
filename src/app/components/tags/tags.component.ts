@@ -14,6 +14,7 @@ import { Tag } from '../../models/tag.model';
 export class TagsComponent implements OnInit {
   tags: Tag[] = [];
   selectedTags: Set<number> = new Set<number>();
+  error: string | null = null;
 
   @Output() tagSelectionChanged = new EventEmitter<number[]>();
 
@@ -27,9 +28,16 @@ export class TagsComponent implements OnInit {
    * Fetch tags from the CardService
    */
   fetchTags(): void {
-    this.cardService.getTags().subscribe((data: Tag[]) => {
-      this.tags = data;
-    });
+    this.cardService.getTags().subscribe(
+      (data: Tag[]) => {
+        this.tags = data;
+        this.error = this.tags.length === 0 ? 'Aucun tag disponible.' : null;
+      },
+      (error) => {
+        this.error = 'Échec du chargement des tags. Veuillez réessayer plus tard.';
+        console.error('Error fetching tags:', error);
+      }
+    );
   }
 
   /**
