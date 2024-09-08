@@ -1,10 +1,16 @@
 <div class="card-container row">
   <div *ngFor="let card of filteredCards" class="col-md-4 mb-4">
     <mat-card class="card">
-      <mat-card-title>{{ card.question }}</mat-card-title>
+      <mat-card-title (click)="toggleAnswer(card)" class="clickable">
+        {{ card.question }}
+      </mat-card-title>
       <mat-card-content>
         <p>{{ card.description }}</p>
+        <p *ngIf="card.showAnswer" class="answer">{{ card.answer }}</p>
       </mat-card-content>
+      <button mat-button (click)="toggleAnswer(card)">
+        {{ card.showAnswer ? 'Masquer la réponse' : 'Afficher la réponse' }}
+      </button>
     </mat-card>
   </div>
 </div>

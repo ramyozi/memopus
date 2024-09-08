@@ -5,4 +5,5 @@ export interface Card {
   description: string;
   tag: number;
   column: number;
+  showAnswer?: boolean;
 }
