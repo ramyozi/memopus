@@ -1,0 +1,7 @@
+<div class="tags-container">
+  <button mat-button *ngFor="let tag of tags"
+          [class.selected]="selectedTags.has(tag.id)"
+          (click)="toggleTagSelection(tag.id)">
+    {{ tag.label }}
+  </button>
+</div>
