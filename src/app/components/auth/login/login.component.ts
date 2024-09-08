@@ -24,7 +24,7 @@ export class LoginComponent {
   onLogin(): void {
     this.authService.login(this.login, this.password).subscribe((isAuthenticated) => {
       if (isAuthenticated) {
-        this.router.navigate(['/']);
+        this.router.navigate(['/dashboard']);
       } else {
         this.error = 'Invalid login or password.';
       }
