@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatCardModule } from '@angular/material/card';
 import { CardService } from '../../services/card.service';
+import {Card} from "../../models/card.model";
 
 @Component({
   selector: 'app-cards',
@@ -11,8 +12,8 @@ import { CardService } from '../../services/card.service';
   styleUrls: ['./cards.component.css']
 })
 export class CardsComponent implements OnInit {
-  cards: any[] = [];
-  filteredCards: any[] = [];
+  cards: Card[] = [];
+  filteredCards: Card[] = [];
 
   @Input() selectedTags: number[] = [];
 

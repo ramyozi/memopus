@@ -2,6 +2,7 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
 import { CardService } from '../../services/card.service';
+import {Tag} from "../../models/tag.model";
 
 @Component({
   selector: 'app-tags',
@@ -11,7 +12,7 @@ import { CardService } from '../../services/card.service';
   styleUrls: ['./tags.component.css']
 })
 export class TagsComponent implements OnInit {
-  tags: any[] = [];
+  tags: Tag[] = [];
   selectedTags: Set<number> = new Set<number>();
 
   @Output() tagSelectionChanged = new EventEmitter<number[]>();
