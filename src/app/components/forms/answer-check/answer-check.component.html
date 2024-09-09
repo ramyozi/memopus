@@ -1,0 +1,29 @@
+<h2>Proposer une réponse</h2>
+<p>{{ data.question }}</p>
+
+<form [formGroup]="answerForm" (ngSubmit)="checkAnswer()">
+  <mat-form-field appearance="fill">
+    <textarea matInput formControlName="proposedAnswer" placeholder="Réponse"></textarea>
+  </mat-form-field>
+  <button mat-raised-button color="warn" type="submit">Comparer</button>
+</form>
+
+<div *ngIf="showComparison">
+  <p><strong>Bonne réponse :</strong></p>
+  <div>
+    <span *ngFor="let char of answerComparison"
+          [ngStyle]="{'background-color': char.correct ? 'lightgreen' : 'red'}">
+      {{ char.correct ? char.char : data.correctAnswer[answerComparison.indexOf(char)] }}
+    </span>
+  </div>
+
+  <p><strong>Votre réponse :</strong></p>
+  <div>
+    <span *ngFor="let char of answerComparison"
+          [ngStyle]="{'background-color': char.correct ? 'lightgreen' : 'red'}">
+      {{ char.char }}
+    </span>
+  </div>
+</div>
+
+<button mat-raised-button color="primary" (click)="closeDialog()">Fermer</button>
