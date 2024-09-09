@@ -119,16 +119,25 @@ export class ColumnsComponent implements OnInit {
   onDrop(event: DragEvent, columnId: number): void {
     event.preventDefault();
     const cardId = event.dataTransfer?.getData('text/plain');
+
     if (cardId) {
-      console.log(`Moving card ${cardId} to column ${columnId}`);
-      const card = this.cards.find(c => c.id === +cardId);
-      if (card && card.column !== columnId) {
-        this.moveCard(card, columnId);
+      console.log(`Moving card with ID (string): "${cardId}" to column ${columnId}`);
+      const card = this.cards.find(c => String(c.id) === cardId.trim());
+
+      if (card) {
+        console.log('Card found:', card);
+
+        if (card.column !== columnId) {
+          this.moveCard(card, columnId);
+        }
+      } else {
+        console.error('Card not found. Card ID:', cardId, 'Available cards:', this.cards.map(c => c.id));
       }
     } else {
       console.error('Failed to get card ID from data transfer');
     }
   }
+
 
   /**
    * Handle click event
@@ -157,5 +166,12 @@ export class ColumnsComponent implements OnInit {
     });
   }
 
-
+  /**
+   * Get the number of cards for a column
+   * @param columnId
+   * @returns {number}
+   */
+  getCardCountForColumn(columnId: number): number {
+    return this.getCardsForColumn(columnId).length;
+  }
 }
