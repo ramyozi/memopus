@@ -1,0 +1,12 @@
+<h2>{{ isEditMode ? 'Modifier la colonne' : 'Créer une nouvelle colonne' }}</h2>
+<form [formGroup]="columnForm" (ngSubmit)="onSubmit()">
+  <mat-form-field appearance="fill">
+    <mat-label>Label</mat-label>
+    <input matInput formControlName="label" placeholder="Nom de la colonne">
+    <mat-error *ngIf="columnForm.get('label')?.hasError('required')">Le label est requis</mat-error>
+  </mat-form-field>
+  <div class="form-actions">
+    <button mat-button type="button" (click)="onCancel()">Annuler</button>
+    <button mat-raised-button color="primary" type="submit">{{ isEditMode ? 'Mettre à jour' : 'Créer' }}</button>
+  </div>
+</form>

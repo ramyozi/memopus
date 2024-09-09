@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, SimpleChanges, OnChanges } from '@angular/core';
+import {Component, OnInit, Input, SimpleChanges, OnChanges, EventEmitter, Output} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatCardModule } from '@angular/material/card';
 import { CardService } from '../../services/card.service';
@@ -10,6 +10,8 @@ import {FormsModule} from "@angular/forms";
 import {MatDialog} from "@angular/material/dialog";
 import {AnswerCheckComponent} from "../forms/answer-check/answer-check.component";
 import {MatIcon} from "@angular/material/icon";
+import {CardFormComponent} from "../forms/card-form/card-form.component";
+import {AdminService} from "../../services/admin.service";
 
 @Component({
   selector: 'app-cards',
@@ -22,15 +24,19 @@ export class CardsComponent implements OnInit, OnChanges {
   @Input() cards: Card[] = [];
   @Input() columns: number = 3;
 
-  proposedAnswers: { [cardId: number]: string } = {};
-  answerComparisons: { [cardId: number]: { char: string; correct: boolean }[] } = {};
+  @Output() cardUpdated = new EventEmitter<void>();
+
   showInput: { [cardId: number]: boolean } = {};
+  isAdminMode: boolean = false;
 
 
-  constructor(private cardService: CardService, private dialog: MatDialog) {}
+  constructor(private cardService: CardService, private dialog: MatDialog, private adminService: AdminService) {}
 
-  ngOnInit(): void {}
-
+  ngOnInit(): void {
+    this.adminService.adminMode$.subscribe((isAdmin) => {
+      this.isAdminMode = isAdmin;
+    });
+  }
   ngOnChanges(changes: SimpleChanges): void {
     if (changes['cards']) {
       this.cards.forEach(card => this.showInput[card.id] = false);
@@ -53,6 +59,27 @@ export class CardsComponent implements OnInit, OnChanges {
     });
 
     dialogRef.afterClosed().subscribe(result => {
+    });
+  }
+
+  /**
+   * Open the card form modal in edit mode.
+   * @param {Card} card - The card to edit.
+   */
+  openEditCardModal(card: Card): void {
+    const dialogRef = this.dialog.open(CardFormComponent, {
+      width: '400px',
+      data: {
+        card: card,
+        selectedTagId: card.tag,
+        columnId: card.column
+      }
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        this.cardUpdated.emit();
+      }
     });
   }
 

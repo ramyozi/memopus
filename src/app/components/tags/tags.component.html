@@ -8,6 +8,9 @@
             [class.selected]="selectedTags.has(tag.id)"
             (click)="toggleTagSelection(tag.id)">
       {{ tag.label }}
+      <button *ngIf="isAdminMode" mat-icon-button color="primary" (click)="openUpdateTagModal(tag); $event.stopPropagation()">
+        <mat-icon>settings</mat-icon>
+      </button>
     </button>
     <button mat-button color="warn" (click)="resetSelections()">Reset Filters</button>
   </div>

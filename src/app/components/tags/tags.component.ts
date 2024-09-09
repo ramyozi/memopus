@@ -6,6 +6,7 @@ import { Tag } from '../../models/tag.model';
 import {MatIcon} from "@angular/material/icon";
 import {TagFormComponent} from "../forms/tag-form/tag-form.component";
 import {MatDialog} from "@angular/material/dialog";
+import {AdminService} from "../../services/admin.service";
 
 @Component({
   selector: 'app-tags',
@@ -18,13 +19,21 @@ export class TagsComponent implements OnInit {
   tags: Tag[] = [];
   selectedTags: Set<number> = new Set<number>();
   error: string | null = null;
+  isAdminMode: boolean = false;
 
   @Output() tagSelectionChanged = new EventEmitter<number[]>();
 
-  constructor(private cardService: CardService, private dialog: MatDialog) {}
+  constructor(
+    private cardService: CardService,
+    private dialog: MatDialog,
+    private adminService: AdminService
+  ) {}
 
   ngOnInit(): void {
     this.fetchTags();
+    this.adminService.adminMode$.subscribe((isAdmin) => {
+      this.isAdminMode = isAdmin;
+    });
   }
 
   /**
@@ -72,8 +81,8 @@ export class TagsComponent implements OnInit {
   }
 
   /**
-    Open the create tag modal
-  */
+   * Open the create tag modal.
+   */
   openCreateTagModal(): void {
     const dialogRef = this.dialog.open(TagFormComponent, {
       width: '400px',
@@ -87,4 +96,20 @@ export class TagsComponent implements OnInit {
     });
   }
 
+  /**
+   * Opens the update tag modal.
+   * @param {Tag} tag - The tag to update.
+   */
+  openUpdateTagModal(tag: Tag): void {
+    const dialogRef = this.dialog.open(TagFormComponent, {
+      width: '400px',
+      data: { tag }
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        this.fetchTags();
+      }
+    });
+  }
 }

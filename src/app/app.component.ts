@@ -1,19 +1,21 @@
 import { Component } from '@angular/core';
-import {Router, RouterModule} from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { AuthService } from './services/auth.service';
-import {CommonModule} from "@angular/common";
+import { AdminService } from './services/admin.service';
+import { CommonModule } from "@angular/common";
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterModule, CommonModule],
+  imports: [RouterModule, CommonModule, MatButtonModule],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
   title = 'memopus';
 
-  constructor(private authService: AuthService, private router: Router) {}
+  constructor(private authService: AuthService, private router: Router, private adminService: AdminService) {}
 
   /**
    * Checks if the user is authenticated.
@@ -29,5 +31,12 @@ export class AppComponent {
   logout(): void {
     this.authService.logout();
     this.router.navigate(['/login']);
+  }
+
+  /**
+   * Toggles the administration mode.
+   */
+  toggleAdminMode(): void {
+    this.adminService.toggleAdminMode();
   }
 }

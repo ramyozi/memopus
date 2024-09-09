@@ -4,9 +4,14 @@
     <button mat-icon-button color="primary" (click)="openCreateCardModal(column.id)">
       <mat-icon>add</mat-icon>
     </button>
-    <h2>{{ column.label }} ({{ getCardCountForColumn(column.id) }})</h2>
+    <h2>
+      {{ column.label }} ({{ getCardCountForColumn(column.id) }})
+      <button *ngIf="isAdminMode" mat-icon-button color="primary" (click)="openUpdateColumnModal(column)">
+        <mat-icon>settings</mat-icon>
+      </button>
+    </h2>
     <div class="cards-container">
-      <app-cards [cards]="getCardsForColumn(column.id)" [columns]="1"></app-cards>
+      <app-cards [cards]="getCardsForColumn(column.id)" [columns]="1" (cardUpdated)="fetchCards()"></app-cards>
       <ng-template #noCards>
         <p>Pas de cartes</p>
       </ng-template>

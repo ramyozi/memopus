@@ -10,6 +10,9 @@ import {MatIcon} from "@angular/material/icon";
 import {CardFormComponent} from "../forms/card-form/card-form.component";
 import {MatDialog} from "@angular/material/dialog";
 import {CardsComponent} from "../cards/cards.component";
+import {AdminService} from "../../services/admin.service";
+import {TagFormComponent} from "../forms/tag-form/tag-form.component";
+import {ColumnFormComponent} from "../forms/column-form/column-form.component";
 
 @Component({
   selector: 'app-columns',
@@ -23,14 +26,21 @@ export class ColumnsComponent implements OnInit {
   cards: Card[] = [];
   columns: Column[] = [];
   error: string | null = null;
+  isAdminMode: boolean = false;
 
-  constructor(private cardService: CardService, private columnService: ColumnService, private dialog: MatDialog) {}
+  constructor(private cardService: CardService,
+              private columnService: ColumnService,
+              private dialog: MatDialog,
+              private adminService: AdminService
+) {}
 
   ngOnInit(): void {
     this.fetchCards();
     this.fetchColumns();
+    this.adminService.adminMode$.subscribe((isAdmin) => {
+      this.isAdminMode = isAdmin;
+    });
   }
-
   /**
    * Fetch cards from the CardService
    */
@@ -173,5 +183,22 @@ export class ColumnsComponent implements OnInit {
    */
   getCardCountForColumn(columnId: number): number {
     return this.getCardsForColumn(columnId).length;
+  }
+
+  /**
+   * Opens the update column modal.
+   * @param {Column} column - The column to update.
+   */
+  openUpdateColumnModal(column: Column): void {
+    const dialogRef = this.dialog.open(ColumnFormComponent, {
+      width: '400px',
+      data: { column }
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        this.fetchColumns();  // Refresh columns after updating
+      }
+    });
   }
 }

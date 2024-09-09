@@ -1,6 +1,9 @@
 <div class="app-container">
   <nav class="navbar">
     <a *ngIf="isAuthenticated()" (click)="logout()">Logout</a>
+    <button *ngIf="isAuthenticated()" mat-button (click)="toggleAdminMode()">
+      Activer le mode administration
+    </button>
   </nav>
   <main class="main container">
     <router-outlet></router-outlet>

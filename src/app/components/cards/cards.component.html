@@ -12,6 +12,10 @@
         <p>{{ card.description }}</p>
 
         <button mat-raised-button color="primary" (click)="openAnswerModal(card)">Proposer une réponse</button>
+
+        <button *ngIf="isAdminMode" mat-icon-button color="primary" (click)="openEditCardModal(card)">
+          <mat-icon>edit</mat-icon>
+        </button>
       </mat-card-content>
     </mat-card>
   </div>

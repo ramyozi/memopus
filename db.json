@@ -1,15 +1,15 @@
 {
   "cards": [
     {
-      "id": 1,
+      "id": "1",
       "question": "Qu'est-ce que 'SELECT' en SQL?",
       "answer": "Commande de requête",
       "description": "Commande de base pour interroger une base de données.",
       "tag": "8",
-      "column": "1"
+      "column": "2"
     },
     {
-      "id": 2,
+      "id": "2",
       "question": "Symbole de décalage à droite en JavaScript?",
       "answer": ">>",
       "description": "Opérateur pour décaler les bits vers la droite.",
@@ -17,7 +17,7 @@
       "column": "1"
     },
     {
-      "id": 3,
+      "id": "3",
       "question": "Mot clé pour créer une variable en Python?",
       "answer": "var",
       "description": "Mot clé incorrect pour déclaration de variable en Python.",
@@ -25,7 +25,7 @@
       "column": "2"
     },
     {
-      "id": 4,
+      "id": "4",
       "question": "Mot clé pour imprimer en Python?",
       "answer": "print",
       "description": "Utilisé pour afficher du texte ou des variables.",
@@ -33,7 +33,7 @@
       "column": "2"
     },
     {
-      "id": 5,
+      "id": "5",
       "question": "Comment créer une liste en Python?",
       "answer": "[]",
       "description": "Utilisez les crochets pour initialiser une liste.",
@@ -41,7 +41,7 @@
       "column": "2"
     },
     {
-      "id": 6,
+      "id": "6",
       "question": "Que fait 'flex' en CSS?",
       "answer": "flex",
       "description": "Propriété pour créer des layouts flexibles.",
@@ -49,7 +49,7 @@
       "column": "1"
     },
     {
-      "id": 7,
+      "id": "7",
       "question": "Comment lier un événement en Angular?",
       "answer": "(event)",
       "description": "Syntaxe pour attacher un gestionnaire d'événements.",
@@ -57,7 +57,7 @@
       "column": "1"
     },
     {
-      "id": 8,
+      "id": "8",
       "question": "Comment déclarer un composant en Angular?",
       "answer": "@Component",
       "description": "Décorateur pour déclarer un nouveau composant.",
@@ -65,7 +65,7 @@
       "column": "1"
     },
     {
-      "id": 9,
+      "id": "9",
       "question": "Qu'est-ce qu'un 'Hook' en React?",
       "answer": "Hook",
       "description": "Fonction permettant d'utiliser l'état dans les composants fonctionnels.",
@@ -73,7 +73,7 @@
       "column": "1"
     },
     {
-      "id": 10,
+      "id": "10",
       "question": "Syntaxe de base pour un composant fonctionnel en React?",
       "answer": "const Component = () => {}",
       "description": "Déclaration d'un composant fonctionnel en React.",
@@ -81,7 +81,7 @@
       "column": "1"
     },
     {
-      "id": 11,
+      "id": "11",
       "question": "Commande pour installer un paquet npm en Node.js?",
       "answer": "npm install",
       "description": "Commande utilisée pour installer des modules Node.js.",
@@ -89,7 +89,7 @@
       "column": "1"
     },
     {
-      "id": 12,
+      "id": "12",
       "question": "Comment définir une variable en SQL?",
       "answer": "DECLARE",
       "description": "Instruction pour déclarer une nouvelle variable locale.",
@@ -97,15 +97,15 @@
       "column": "1"
     },
     {
-      "id": 13,
+      "id": "13",
       "question": "Commande pour démarrer un conteneur Docker?",
       "answer": "docker run",
       "description": "Utilisé pour lancer des conteneurs Docker à partir d'une image.",
       "tag": "9",
-      "column": "1"
+      "column": "2"
     },
     {
-      "id": 14,
+      "id": "14",
       "question": "Propriété CSS pour centrer les éléments?",
       "answer": "text-align: center",
       "description": "Propriété pour aligner le texte au centre.",
@@ -113,7 +113,7 @@
       "column": "1"
     },
     {
-      "id": 15,
+      "id": "15",
       "question": "Comment ajouter une classe CSS en JavaScript?",
       "answer": "element.classList.add('class')",
       "description": "Méthode pour ajouter une classe à un élément du DOM.",
@@ -121,7 +121,7 @@
       "column": "1"
     },
     {
-      "id": 16,
+      "id": "16",
       "question": "Comment créer un serveur HTTP en Node.js?",
       "answer": "http.createServer()",
       "description": "Utilise http pour créer des serveurs web.",
@@ -129,7 +129,7 @@
       "column": "1"
     },
     {
-      "id": 17,
+      "id": "17",
       "question": "Mot clé pour l'héritage en Python?",
       "answer": "extends",
       "description": "Utilisé pour définir l'héritage de classe en Python.",
@@ -137,7 +137,7 @@
       "column": "2"
     },
     {
-      "id": 18,
+      "id": "18",
       "question": "Mot clé pour l'héritage en JavaScript?",
       "answer": "extends",
       "description": "Utilisé pour définir l'héritage de classe.",
@@ -145,64 +145,64 @@
       "column": "2"
     },
     {
-      "id": 19,
+      "id": "19",
       "question": "Comment mettre à jour l'état en React?",
       "answer": "setState()",
       "description": "Fonction pour mettre à jour l'état d'un composant.",
       "tag": "6",
-      "column": "3"
+      "column": "2"
     },
     {
-      "id": 20,
       "question": "Mot clé pour une boucle infinie en Python?",
       "answer": "while True",
-      "description": "Structure de contrôle pour créer une boucle sans fin.",
+      "description": "hahahaha",
       "tag": "2",
-      "column": "3"
+      "column": "3",
+      "id": "20"
     }
   ],
   "users": [
     {
-      "id": 1,
+      "id": "1",
       "login": "y",
       "pwd": "y"
     }
   ],
   "tags": [
     {
-      "id": 1,
-      "label": "JavaScript"
+      "label": "JavaScript test",
+      "id": "1"
     },
     {
-      "id": 2,
+      "id": "2",
       "label": "Python"
     },
     {
-      "id": 3,
+      "id": "3",
       "label": "HTML"
     },
     {
-      "id": 4,
+      "id": "4",
       "label": "CSS"
     },
     {
-      "id": 5,
+      "id": "5",
       "label": "Angular"
     },
     {
-      "id": 6,
+      "id": "6",
       "label": "React"
     },
     {
-      "id": 7,
+      "id": "7",
       "label": "Node.js"
     },
     {
-      "id": 8,
+      "id": "8",
       "label": "SQL"
     },
     {
-      "id": 9,
+      "id": "9",
       "label": "Docker"
     },
     {
@@ -216,17 +216,17 @@
   ],
   "columns": [
     {
-      "id": 1,
+      "id": "1",
       "label": "To Do",
       "order": 1
     },
     {
-      "id": 2,
-      "label": "In Progress",
+      "id": "2",
+      "label": "In Progress test",
       "order": 2
     },
     {
-      "id": 3,
+      "id": "3",
       "label": "Done",
       "order": 3
     }
