@@ -1,25 +1,29 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatDialogRef, MAT_DIALOG_DATA, MatDialogModule } from '@angular/material/dialog';
-import { FormBuilder, ReactiveFormsModule, FormGroup, Validators } from '@angular/forms';
+import {FormBuilder, ReactiveFormsModule, FormGroup, Validators, FormsModule} from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import {Tag} from "../../../models/tag.model";
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {TagService} from "../../../services/tag.service";
 import {MatInputModule} from "@angular/material/input";
 import {MatIconModule} from "@angular/material/icon";
+import {NgxMatColorPickerModule } from '@angular-material-components/color-picker';
+import {MatTooltip} from "@angular/material/tooltip";
 
 @Component({
   selector: 'app-tag-form',
   standalone: true,
   imports: [
     CommonModule,
-    ReactiveFormsModule,
-    MatDialogModule,
+    FormsModule,
     MatButtonModule,
     MatFormFieldModule,
     MatInputModule,
-    MatIconModule
+    MatIconModule,
+    NgxMatColorPickerModule,
+    ReactiveFormsModule,
+    MatTooltip
   ],  templateUrl: './tag-form.component.html',
   styleUrls: ['./tag-form.component.css']
 })
@@ -36,7 +40,8 @@ export class TagFormComponent implements OnInit {
   ) {
     this.isEditMode = !!this.data.tag;
     this.tagForm = this.fb.group({
-      label: [this.data.tag ? this.data.tag.label : '', Validators.required]
+      label: [this.data.tag ? this.data.tag.label : '', Validators.required],
+      color: [this.data.tag ? this.data.tag.color : '#ffffff']
     });
   }
 

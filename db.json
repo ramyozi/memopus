@@ -1,178 +1,402 @@
 {
   "cards": [
     {
-      "question": "Qu'est-ce que 'SELECT' en SQL?",
-      "answer": "Commande de requête",
-      "description": "Commande de base pour interroger une base de données.",
-      "tag": "3",
+      "question": "Quel est le numéro du Docking Bay où le Millenium Falcon est garé à Mos Eisley?",
+      "answer": "94",
+      "description": "Lieu de stationnement à Mos Eisley dans Star Wars: Un nouvel espoir.",
+      "tag": "1",
       "column": "1",
       "id": "1"
     },
     {
-      "id": "2",
-      "question": "Symbole de décalage à droite en JavaScript?",
-      "answer": ">>",
-      "description": "Opérateur pour décaler les bits vers la droite.",
-      "tag": "1",
-      "column": "3"
-    },
-    {
-      "id": "3",
-      "question": "Mot clé pour créer une variable en Python?",
-      "answer": "var",
-      "description": "Mot clé incorrect pour déclaration de variable en Python.",
+      "question": "Quelle est la première pierre d'Infinité récupérée par Thanos dans les films MCU?",
+      "answer": "Pouvoir",
+      "description": "Thanos obtient la Pierre de Pouvoir de Xandar.",
       "tag": "2",
-      "column": "3"
+      "column": "2",
+      "id": "2"
     },
     {
-      "id": "4",
-      "question": "Mot clé pour imprimer en Python?",
-      "answer": "print",
-      "description": "Utilisé pour afficher du texte ou des variables.",
-      "tag": "2",
-      "column": "1"
+      "question": "Quel est le mot de passe pour la carte du Maraudeur dans Harry Potter?",
+      "answer": "Malice",
+      "description": "Le mot de passe est 'Je jure solennellement que mes intentions sont mauvaises'.",
+      "tag": "3",
+      "column": "3",
+      "id": "3"
     },
     {
-      "id": "5",
-      "question": "Comment créer une liste en Python?",
-      "answer": "[]",
-      "description": "Utilisez les crochets pour initialiser une liste.",
-      "tag": "2",
-      "column": "3"
-    },
-    {
-      "id": "6",
-      "question": "Que fait 'flex' en CSS?",
-      "answer": "flex",
-      "description": "Propriété pour créer des layouts flexibles.",
+      "question": "Comment s'appelle l'entreprise de Lumon dans Severance?",
+      "answer": "Eagan",
+      "description": "Fondée par Kier Eagan dans Severance.",
       "tag": "4",
-      "column": "1"
-    },
-    {
-      "id": "7",
-      "question": "Comment lier un événement en Angular?",
-      "answer": "(event)",
-      "description": "Syntaxe pour attacher un gestionnaire d'événements.",
-      "tag": "5",
-      "column": "1"
-    },
-    {
-      "question": "Comment définir une variable en SQL?",
-      "answer": "DECLARE",
-      "description": "Instruction pour déclarer une nouvelle variable locale.",
-      "tag": "2",
       "column": "1",
+      "id": "4"
+    },
+    {
+      "question": "Quel est le nom complet de Heisenberg dans Breaking Bad?",
+      "answer": "Walter White",
+      "description": "Alias de Walter White dans Breaking Bad.",
+      "tag": "5",
+      "column": "2",
+      "id": "5"
+    },
+    {
+      "question": "Quelle chanson joue lors de la scène d'introduction de Reservoir Dogs?",
+      "answer": "Little Green Bag",
+      "description": "Chanson iconique de George Baker Selection.",
+      "tag": "6",
+      "column": "3",
+      "id": "6"
+    },
+    {
+      "question": "Quel personnage est tué dans le final de la saison 5 des Sopranos?",
+      "answer": "Tony Blundetto",
+      "description": "Tony Soprano tue Tony Blundetto pour éviter une guerre.",
+      "tag": "7",
+      "column": "1",
+      "id": "7"
+    },
+    {
+      "question": "Quelle est la société de cybersécurité dans Mr. Robot?",
+      "answer": "Allsafe",
+      "description": "Allsafe est l'entreprise de cybersécurité de Gideon Goddard.",
+      "tag": "8",
+      "column": "2",
+      "id": "8"
+    },
+    {
+      "question": "Quel est le nom de la ville souterraine de Zion dans Matrix?",
+      "answer": "Zion",
+      "description": "Dernière ville humaine libre dans la trilogie Matrix.",
+      "tag": "9",
+      "column": "3",
+      "id": "9"
+    },
+    {
+      "question": "Quel est le nom de l'aigle de Peacemaker?",
+      "answer": "Eagly",
+      "description": "Eagly est l'animal de compagnie de Peacemaker.",
+      "tag": "10",
+      "column": "1",
+      "id": "10"
+    },
+    {
+      "question": "Qui est le chef des Scranton Stranglers dans The Office?",
+      "answer": "Toby",
+      "description": "On suppose que Toby Flenderson est le Strangler.",
+      "tag": "11",
+      "column": "2",
+      "id": "11"
+    },
+    {
+      "question": "Quel est le vrai prénom de BoJack dans BoJack Horseman?",
+      "answer": "BoJack",
+      "description": "BoJack est son véritable prénom; il n'a pas de nom de famille officiel.",
+      "tag": "12",
+      "column": "3",
       "id": "12"
     },
     {
-      "id": "14",
-      "question": "Propriété CSS pour centrer les éléments?",
-      "answer": "text-align: center",
-      "description": "Propriété pour aligner le texte au centre.",
-      "tag": "4",
-      "column": "3"
-    },
-    {
-      "id": "15",
-      "question": "Comment ajouter une classe CSS en JavaScript?",
-      "answer": "element.classList.add('class')",
-      "description": "Méthode pour ajouter une classe à un élément du DOM.",
+      "question": "Qui est le père de Luke Skywalker?",
+      "answer": "Anakin",
+      "description": "Anakin Skywalker, qui devient Dark Vador.",
       "tag": "1",
-      "column": "1"
+      "column": "1",
+      "id": "13"
     },
     {
-      "question": "Comment créer un serveur HTTP en Node.js?",
-      "answer": "http.createServer()",
-      "description": "Utilise http pour créer des serveurs web.",
-      "tag": "9",
+      "question": "Comment s'appelle la forme de Hulk contrôlée par Bruce Banner?",
+      "answer": "Professor",
+      "description": "Connu sous le nom de 'Professor Hulk' dans les comics et les films.",
+      "tag": "2",
+      "column": "2",
+      "id": "14"
+    },
+    {
+      "question": "Quel est l'ingrédient principal de la Bièraubeurre?",
+      "answer": "Beurre",
+      "description": "La Bièraubeurre est une boisson fictive dans Harry Potter.",
+      "tag": "3",
+      "column": "3",
+      "id": "15"
+    },
+    {
+      "question": "Comment s'appelle la salle secrète dans Severance où les employés sont réinitialisés?",
+      "answer": "Break Room",
+      "description": "La 'Break Room' est utilisée pour 'réinitialiser' les employés.",
+      "tag": "4",
       "column": "1",
       "id": "16"
     },
     {
-      "id": "17",
-      "question": "Mot clé pour l'héritage en Python?",
-      "answer": "extends",
-      "description": "Utilisé pour définir l'héritage de classe en Python.",
-      "tag": "2",
-      "column": "3"
-    },
-    {
-      "id": "18",
-      "question": "Mot clé pour l'héritage en JavaScript?",
-      "answer": "extends",
-      "description": "Utilisé pour définir l'héritage de classe.",
-      "tag": "1",
-      "column": "3"
-    },
-    {
-      "question": "Comment mettre à jour l'état en React?",
-      "answer": "setState()",
-      "description": "Fonction pour mettre à jour l'état d'un composant.",
-      "tag": "4",
+      "question": "Comment Walter White cache-t-il l'argent?",
+      "answer": "Car Wash",
+      "description": "Walter utilise son lave-auto comme blanchisserie d'argent.",
+      "tag": "5",
       "column": "2",
+      "id": "17"
+    },
+    {
+      "question": "Quel est le surnom de Jules dans Pulp Fiction?",
+      "answer": "Badass Motherf***er",
+      "description": "Son portefeuille est marqué avec ce surnom.",
+      "tag": "6",
+      "column": "3",
+      "id": "18"
+    },
+    {
+      "question": "Quelle est la devise des Sopranos?",
+      "answer": "Family First",
+      "description": "Thème central de la série Les Sopranos.",
+      "tag": "7",
+      "column": "1",
       "id": "19"
     },
     {
-      "question": "Mot clé pour une boucle infinie en Python?",
-      "answer": "while True",
-      "description": "hahahaha",
-      "tag": "2",
-      "column": "3",
+      "question": "Comment s'appelle le groupe de hackers dans Mr. Robot?",
+      "answer": "fsociety",
+      "description": "fsociety veut démanteler l'ordre financier.",
+      "tag": "8",
+      "column": "2",
       "id": "20"
-    }
-  ],
-  "users": [
+    },
     {
-      "id": "1",
-      "login": "y",
-      "pwd": "y"
+      "question": "Quel est le surnom de Neo dans Matrix?",
+      "answer": "The One",
+      "description": "Neo est considéré comme 'The One' dans la trilogie Matrix.",
+      "tag": "9",
+      "column": "3",
+      "id": "21"
+    },
+    {
+      "question": "Quel est le vrai nom de Peacemaker?",
+      "answer": "Chris",
+      "description": "Son vrai nom est Christopher Smith.",
+      "tag": "10",
+      "column": "1",
+      "id": "22"
+    },
+    {
+      "question": "Quelle est la couleur emblématique des papiers de Dwight Schrute?",
+      "answer": "Jaune",
+      "description": "Les papiers de Schrute Farms sont toujours jaunes.",
+      "tag": "11",
+      "column": "2",
+      "id": "23"
+    },
+    {
+      "question": "Quel est le prénom du meilleur ami de BoJack?",
+      "answer": "Todd",
+      "description": "Todd Chavez est le colocataire et meilleur ami de BoJack.",
+      "tag": "12",
+      "column": "3",
+      "id": "24"
+    },
+    {
+      "question": "Quel est le nom du père adoptif de Rey dans Star Wars?",
+      "answer": "Unkar",
+      "description": "Unkar Plutt de Jakku.",
+      "tag": "1",
+      "column": "1",
+      "id": "25"
+    },
+    {
+      "question": "Quel est le nom du robot créé par Tony Stark et Bruce Banner?",
+      "answer": "Ultron",
+      "description": "Ultron est l'antagoniste principal d'Avengers: Age of Ultron.",
+      "tag": "2",
+      "column": "2",
+      "id": "26"
+    },
+    {
+      "question": "Comment s'appelle le chat de Hermione?",
+      "answer": "Pattenrond",
+      "description": "Pattenrond est le chat croisé de Hermione.",
+      "tag": "3",
+      "column": "3",
+      "id": "27"
+    },
+    {
+      "question": "Quel personnage de Severance cache un secret à propos de sa vie à l'extérieur?",
+      "answer": "Helly",
+      "description": "Helly découvre son lien avec Lumon.",
+      "tag": "4",
+      "column": "1",
+      "id": "28"
+    },
+    {
+      "question": "Quel est le dernier mot de Walter White?",
+      "answer": "Lydia",
+      "description": "Walter appelle Lydia pour confirmer son empoisonnement.",
+      "tag": "5",
+      "column": "2",
+      "id": "29"
+    },
+    {
+      "question": "Dans quel film de Tarantino, Uma Thurman porte une tenue jaune?",
+      "answer": "Kill Bill",
+      "description": "Tenue iconique de la mariée dans Kill Bill.",
+      "tag": "6",
+      "column": "3",
+      "id": "30"
+    },
+    {
+      "question": "Qui est le psychiatre de Tony Soprano?",
+      "answer": "Melfi",
+      "description": "Dr. Jennifer Melfi, son psychiatre tout au long de la série.",
+      "tag": "7",
+      "column": "1",
+      "id": "31"
+    },
+    {
+      "question": "Quel est le secret de Whiterose?",
+      "answer": "Machine",
+      "description": "Whiterose travaille sur une machine secrète.",
+      "tag": "8",
+      "column": "2",
+      "id": "32"
+    },
+    {
+      "question": "Quel est le prénom de l'Architecte dans Matrix?",
+      "answer": "Architect",
+      "description": "Un des programmes de la Matrice.",
+      "tag": "9",
+      "column": "3",
+      "id": "33"
+    },
+    {
+      "question": "Comment Peacemaker surnomme-t-il sa voiture?",
+      "answer": "Eaglemobile",
+      "description": "Voiture customisée du personnage.",
+      "tag": "10",
+      "column": "1",
+      "id": "34"
+    },
+    {
+      "question": "Quel surnom Michael Scott donne-t-il à son alter ego 'gangsta'?",
+      "answer": "Prison Mike",
+      "description": "Michael Scott se prend pour un prisonnier pour faire rire son équipe.",
+      "tag": "11",
+      "column": "2",
+      "id": "35"
+    },
+    {
+      "question": "Quel est le nom de l'émission de BoJack?",
+      "answer": "Horsin' Around",
+      "description": "Sitcom fictive des années 90 dans la série.",
+      "tag": "12",
+      "column": "3",
+      "id": "36"
+    },
+    {
+      "question": "Quel est le nom du droïde de C-3PO en pièces détachées?",
+      "answer": "R2D2",
+      "description": "R2D2 est le partenaire robotique de C-3PO.",
+      "tag": "1",
+      "column": "1",
+      "id": "37"
+    },
+    {
+      "question": "Quel est le marteau légendaire de Thor?",
+      "answer": "Mjolnir",
+      "description": "Mjolnir est l'arme emblématique de Thor.",
+      "tag": "2",
+      "column": "2",
+      "id": "38"
+    },
+    {
+      "question": "Comment s'appelle l'éclair de Lord Voldemort?",
+      "answer": "Avada",
+      "description": "La malédiction impardonnable 'Avada Kedavra'.",
+      "tag": "3",
+      "column": "3",
+      "id": "39"
+    },
+    {
+      "question": "Quel surnom Tony Soprano utilise-t-il pour ses affaires?",
+      "answer": "Gotti",
+      "description": "Référence au parrain John Gotti.",
+      "tag": "7",
+      "column": "1",
+      "id": "40"
     }
   ],
   "tags": [
     {
-      "label": "JavaScript test",
       "id": "1",
-      "color": "#f0db4f"
+      "label": "Star Wars",
+      "color": "#eee9c8"
     },
     {
       "id": "2",
-      "label": "Python"
+      "label": "Marvel",
+      "color": "#afcce4"
     },
     {
       "id": "3",
-      "label": "HTML"
+      "label": "Harry Potter",
+      "color": "#edc8bf"
     },
     {
       "id": "4",
-      "label": "CSS"
+      "label": "Severance",
+      "color": "#e1cde4"
     },
     {
-      "label": "Angular",
-      "id": "5"
+      "id": "5",
+      "label": "Breaking Bad",
+      "color": "#f0e68c"
+    },
+    {
+      "id": "6",
+      "label": "Tarantino Films",
+      "color": "#ffcccb"
+    },
+    {
+      "id": "7",
+      "label": "The Sopranos",
+      "color": "#90ee90"
+    },
+    {
+      "id": "8",
+      "label": "Mr. Robot",
+      "color": "#add8e6"
     },
     {
       "id": "9",
-      "label": "Docker"
+      "label": "Matrix",
+      "color": "#d3d3d3"
     },
     {
-      "id": "51de",
-      "label": "test"
+      "id": "10",
+      "label": "Peacemaker",
+      "color": "#c0c0c0"
+    },
+    {
+      "label": "The Office",
+      "color": "#c9f5bc",
+      "id": "11"
+    },
+    {
+      "id": "12",
+      "label": "BoJack Horseman",
+      "color": "#f5deb3"
     }
   ],
   "columns": [
     {
       "id": "1",
-      "label": "To Do",
+      "label": "A regarder",
       "order": 1
     },
     {
       "id": "2",
-      "label": "In Progress",
+      "label": "En cours",
       "order": 2
     },
     {
       "id": "3",
-      "label": "Done",
+      "label": "Terminé",
       "order": 3
     }
   ]

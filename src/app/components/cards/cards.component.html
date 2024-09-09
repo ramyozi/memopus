@@ -6,14 +6,13 @@
         <mat-card-title class="card-title">
           {{ card.question }}
         </mat-card-title>
-        <button mat-icon-button class="drag-handle" (mousedown)="$event.stopPropagation()">
+        <button mat-icon-button class="drag-handle" (mousedown)="$event.stopPropagation()" matTooltip="Déplacer la carte">
           <mat-icon>drag_indicator</mat-icon>
         </button>
       </div>
       <mat-card-content>
-        <p>{{ card.description }}</p>
         <div class="card-actions">
-          <button mat-raised-button color="primary" (click)="openAnswerModal(card)">Proposer une réponse</button>
+          <button mat-stroked-button color="primary" (click)="openAnswerModal(card)">Proposer une réponse</button>
           <button *ngIf="isAdminMode" mat-icon-button color="primary" (click)="openEditCardModal(card)">
             <mat-icon>edit</mat-icon>
           </button>

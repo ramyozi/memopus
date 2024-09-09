@@ -8,6 +8,7 @@ import {TagFormComponent} from "../forms/tag-form/tag-form.component";
 import {MatDialog} from "@angular/material/dialog";
 import {AdminService} from "../../services/admin.service";
 import {LightenDarkenColor} from "../../hooks/edit-color";
+import {BehaviorSubject} from "rxjs";
 
 @Component({
   selector: 'app-tags',
@@ -17,7 +18,7 @@ import {LightenDarkenColor} from "../../hooks/edit-color";
   styleUrls: ['./tags.component.css']
 })
 export class TagsComponent implements OnInit {
-  tags: Tag[] = [];
+  tags$ = new BehaviorSubject<Tag[]>([]);
   selectedTags: Set<number> = new Set<number>();
   error: string | null = null;
   isAdminMode: boolean = false;
@@ -44,12 +45,9 @@ export class TagsComponent implements OnInit {
   fetchTags(): void {
     this.tagService.getTags().subscribe(
       (data: Tag[]) => {
-        this.tags = data.map(tag => ({
-          ...tag,
-          color: this.assignColor(tag.id)
-        }));
-        this.error = this.tags.length === 0 ? 'Aucun tag disponible.' : null;
-        this.tagsFetched.emit(this.tags);
+        this.tags$.next(data);
+        this.error = data.length === 0 ? 'Aucun tag disponible.' : null;
+        this.tagsFetched.emit(data);
       },
       (error) => {
         this.error = 'Échec du chargement des tags. Veuillez réessayer plus tard.';
@@ -138,6 +136,7 @@ export class TagsComponent implements OnInit {
    */
   getTagStyle(tag: Tag): any {
     const isSelected = this.selectedTags.has(tag.id);
+    console.log('tag + color', tag.id, tag.color);
     return {
       'background-color': isSelected ? this.darkenColor(tag.color || 'ffffff', 20) : tag.color,
       'color': isSelected ? '#000000' : '#000000',
@@ -145,6 +144,7 @@ export class TagsComponent implements OnInit {
       'box-shadow': isSelected ? '0 4px 8px rgba(0, 0, 0, 0.2)' : 'none',
       'padding': isSelected ? '16px 24px' : '8px 16px',
       'font-size': isSelected ? '1.2em' : '1em',
+      'font-weight': isSelected ? 'bold' : 'normal',
       'border-radius': isSelected ? '12px' : '8px',
       'transition': 'all 0.3s ease'
     };

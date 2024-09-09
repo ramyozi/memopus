@@ -1,15 +1,23 @@
-<h2>{{ isEditMode ? 'Modifier le tag' : 'Créer un nouveau tag' }}</h2>
-<form [formGroup]="tagForm" (ngSubmit)="onSubmit()">
-  <mat-form-field appearance="fill" class="full-width">
-    <mat-label>Label</mat-label>
-    <input matInput formControlName="label" placeholder="Entrez le label du tag">
-    <mat-error *ngIf="tagForm.get('label')?.hasError('required')">Le label est requis</mat-error>
-  </mat-form-field>
+<div class="tag-form-container">
+  <h2 class="form-title">{{ isEditMode ? 'Modifier le tag' : 'Créer un nouveau tag' }}</h2>
+  <form [formGroup]="tagForm" (ngSubmit)="onSubmit()" class="tag-form">
+    <mat-form-field appearance="outline" class="form-field">
+      <mat-label>Label</mat-label>
+      <input matInput formControlName="label" placeholder="Entrez le label du tag">
+      <mat-error *ngIf="tagForm.get('label')?.hasError('required')">Le label est requis</mat-error>
+    </mat-form-field>
 
-  <div class="form-actions">
-    <button mat-button type="button" (click)="onCancel()">Annuler</button>
-    <button mat-raised-button color="primary" type="submit">{{ isEditMode ? 'Mettre à jour' : 'Créer' }}</button>
-    <button *ngIf="isEditMode" mat-icon-button color="warn" (click)="deleteTag()">
-      <mat-icon>delete</mat-icon>
-    </button>  </div>
-</form>
+    <mat-form-field appearance="outline" class="form-field">
+      <mat-label>Couleur</mat-label>
+      <input type="color" matInput formControlName="color">
+    </mat-form-field>
+
+    <div class="form-actions">
+      <button mat-stroked-button color="primary" type="button" (click)="onCancel()">Annuler</button>
+      <button mat-raised-button color="accent" type="submit">{{ isEditMode ? 'Mettre à jour' : 'Créer' }}</button>
+      <button *ngIf="isEditMode" mat-icon-button color="warn" (click)="deleteTag()" matTooltip="Supprimer">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </div>
+  </form>
+</div>

@@ -13,6 +13,7 @@ import {MatIcon} from "@angular/material/icon";
 import {CardFormComponent} from "../forms/card-form/card-form.component";
 import {AdminService} from "../../services/admin.service";
 import {Tag} from "../../models/tag.model";
+import {MatTooltip} from "@angular/material/tooltip";
 
 @Component({
   selector: 'app-cards',
@@ -23,7 +24,7 @@ import {Tag} from "../../models/tag.model";
     MatFormFieldModule,
     MatInputModule,
     FormsModule,
-    MatIcon
+    MatIcon, MatTooltip
   ],
   templateUrl: './cards.component.html',
   styleUrls: ['./cards.component.css']

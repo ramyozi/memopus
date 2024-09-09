@@ -5,6 +5,7 @@ import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angula
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
+import {MatDivider} from "@angular/material/divider";
 
 @Component({
   selector: 'app-answer-check',
@@ -15,7 +16,8 @@ import { MatButtonModule } from '@angular/material/button';
     MatDialogModule,
     MatFormFieldModule,
     MatInputModule,
-    MatButtonModule
+    MatButtonModule,
+    MatDivider
   ],
   templateUrl: './answer-check.component.html',
   styleUrls: ['./answer-check.component.css']

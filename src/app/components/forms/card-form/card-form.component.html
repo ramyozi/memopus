@@ -1,36 +1,38 @@
-<h2>{{ isEditMode ? 'Modifier la carte' : 'Créer une nouvelle carte' }}</h2>
-<form [formGroup]="cardForm" (ngSubmit)="onSubmit()">
-  <mat-form-field appearance="fill" class="full-width">
-    <mat-label>Question</mat-label>
-    <input matInput formControlName="question" placeholder="Entrez la question">
-    <mat-error *ngIf="cardForm.get('question')?.hasError('required')">La question est requise</mat-error>
-  </mat-form-field>
+<div class="card-form-container">
+  <h2 class="form-title">{{ isEditMode ? 'Modifier la carte' : 'Créer une nouvelle carte' }}</h2>
+  <form [formGroup]="cardForm" (ngSubmit)="onSubmit()" class="card-form">
+    <mat-form-field appearance="outline" class="form-field">
+      <mat-label>Question</mat-label>
+      <input matInput formControlName="question" placeholder="Entrez la question">
+      <mat-error *ngIf="cardForm.get('question')?.hasError('required')">La question est requise</mat-error>
+    </mat-form-field>
 
-  <mat-form-field appearance="fill" class="full-width">
-    <mat-label>Réponse</mat-label>
-    <input matInput formControlName="answer" placeholder="Entrez la réponse">
-    <mat-error *ngIf="cardForm.get('answer')?.hasError('required')">La réponse est requise</mat-error>
-  </mat-form-field>
+    <mat-form-field appearance="outline" class="form-field">
+      <mat-label>Réponse</mat-label>
+      <input matInput formControlName="answer" placeholder="Entrez la réponse">
+      <mat-error *ngIf="cardForm.get('answer')?.hasError('required')">La réponse est requise</mat-error>
+    </mat-form-field>
 
-  <mat-form-field appearance="fill" class="full-width">
-    <mat-label>Explication</mat-label>
-    <textarea matInput formControlName="description" placeholder="Entrez l'explication"></textarea>
-    <mat-error *ngIf="cardForm.get('description')?.hasError('required')">L'explication est requise</mat-error>
-  </mat-form-field>
+    <mat-form-field appearance="outline" class="form-field">
+      <mat-label>Explication</mat-label>
+      <textarea matInput formControlName="description" placeholder="Entrez l'explication"></textarea>
+      <mat-error *ngIf="cardForm.get('description')?.hasError('required')">L'explication est requise</mat-error>
+    </mat-form-field>
 
-  <mat-form-field appearance="fill" class="full-width">
-    <mat-label>Tag</mat-label>
-    <mat-select formControlName="tag">
-      <mat-option *ngFor="let tag of tags" [value]="tag.id">{{ tag.label }}</mat-option>
-    </mat-select>
-    <mat-error *ngIf="cardForm.get('tag')?.hasError('required')">Le tag est requis</mat-error>
-  </mat-form-field>
+    <mat-form-field appearance="outline" class="form-field">
+      <mat-label>Tag</mat-label>
+      <mat-select formControlName="tag">
+        <mat-option *ngFor="let tag of tags" [value]="tag.id">{{ tag.label }}</mat-option>
+      </mat-select>
+      <mat-error *ngIf="cardForm.get('tag')?.hasError('required')">Le tag est requis</mat-error>
+    </mat-form-field>
 
-  <div class="form-actions">
-    <button mat-button type="button" (click)="onCancel()">Annuler</button>
-    <button mat-raised-button color="primary" type="submit">{{ isEditMode ? 'Mettre à jour' : 'Créer' }}</button>
-    <button *ngIf="isEditMode" mat-icon-button color="warn" (click)="deleteCard()">
-      <mat-icon>delete</mat-icon>
-    </button>
-  </div>
-</form>
+    <div class="form-actions">
+      <button mat-stroked-button color="primary" type="button" (click)="onCancel()">Annuler</button>
+      <button mat-raised-button color="accent" type="submit">{{ isEditMode ? 'Mettre à jour' : 'Créer' }}</button>
+      <button *ngIf="isEditMode" mat-icon-button color="warn" (click)="deleteCard()" matTooltip="Supprimer">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </div>
+  </form>
+</div>
