@@ -6,18 +6,7 @@
     </button>
     <h2>{{ column.label }}</h2>
     <div class="cards-container">
-      <ng-container *ngIf="getCardsForColumn(column.id).length > 0; else noCards">
-        <mat-card *ngFor="let card of getCardsForColumn(column.id)"
-                  class="card"
-                  draggable="true"
-                  (dragstart)="onDragStart($event, card)">
-          <mat-card-title (click)="toggleAnswer(card)" class="clickable">{{ card.question }}</mat-card-title>
-          <mat-card-content>
-            <p>{{ card.description }}</p>
-            <p *ngIf="card.showAnswer" class="answer">{{ card.answer }}</p>
-          </mat-card-content>
-        </mat-card>
-      </ng-container>
+      <app-cards [cards]="getCardsForColumn(column.id)" [columns]="1"></app-cards>
       <ng-template #noCards>
         <p>Pas de cartes</p>
       </ng-template>

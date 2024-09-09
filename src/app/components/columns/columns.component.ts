@@ -9,11 +9,12 @@ import {ColumnService} from "../../services/column.service";
 import {MatIcon} from "@angular/material/icon";
 import {CardFormComponent} from "../forms/card-form/card-form.component";
 import {MatDialog} from "@angular/material/dialog";
+import {CardsComponent} from "../cards/cards.component";
 
 @Component({
   selector: 'app-columns',
   standalone: true,
-  imports: [CommonModule, MatCardModule, MatButtonModule, MatIcon],
+  imports: [CommonModule, MatCardModule, MatButtonModule, MatIcon, CardsComponent],
   templateUrl: './columns.component.html',
   styleUrls: ['./columns.component.css']
 })
