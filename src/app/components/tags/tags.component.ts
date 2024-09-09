@@ -3,11 +3,14 @@ import { CommonModule } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
 import { CardService } from '../../services/card.service';
 import { Tag } from '../../models/tag.model';
+import {MatIcon} from "@angular/material/icon";
+import {TagFormComponent} from "../forms/tag-form/tag-form.component";
+import {MatDialog} from "@angular/material/dialog";
 
 @Component({
   selector: 'app-tags',
   standalone: true,
-  imports: [CommonModule, MatButtonModule],
+  imports: [CommonModule, MatButtonModule, MatIcon],
   templateUrl: './tags.component.html',
   styleUrls: ['./tags.component.css']
 })
@@ -18,7 +21,7 @@ export class TagsComponent implements OnInit {
 
   @Output() tagSelectionChanged = new EventEmitter<number[]>();
 
-  constructor(private cardService: CardService) {}
+  constructor(private cardService: CardService, private dialog: MatDialog) {}
 
   ngOnInit(): void {
     this.fetchTags();
@@ -67,4 +70,21 @@ export class TagsComponent implements OnInit {
     this.selectedTags.clear();
     this.emitTagSelection();
   }
+
+  /**
+    Open the create tag modal
+  */
+  openCreateTagModal(): void {
+    const dialogRef = this.dialog.open(TagFormComponent, {
+      width: '400px',
+      data: { tag: null }
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        this.fetchTags();
+      }
+    });
+  }
+
 }

@@ -1,6 +1,9 @@
 <div *ngIf="error" class="error-message">{{ error }}</div>
 <div class="columns-container">
   <div *ngFor="let column of columns" class="column" (dragover)="onDragOver($event)" (drop)="onDrop($event, column.id)">
+    <button mat-icon-button color="primary" (click)="openCreateCardModal(column.id)">
+      <mat-icon>add</mat-icon>
+    </button>
     <h2>{{ column.label }}</h2>
     <div class="cards-container">
       <ng-container *ngIf="getCardsForColumn(column.id).length > 0; else noCards">
@@ -13,9 +16,6 @@
             <p>{{ card.description }}</p>
             <p *ngIf="card.showAnswer" class="answer">{{ card.answer }}</p>
           </mat-card-content>
-          <button mat-button (click)="moveCard(card, column.id === 1 ? 2 : 1)">
-            Déplacer vers {{ column.id === 1 ? 'En cours' : 'À faire' }}
-          </button>
         </mat-card>
       </ng-container>
       <ng-template #noCards>

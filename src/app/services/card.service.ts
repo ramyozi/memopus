@@ -48,4 +48,23 @@ export class CardService {
   getColumns(): Observable<Column[]> {
     return this.http.get<Column[]>(this.columnsUrl);
   }
+
+  /**
+   * Create a new card on the server
+   * @param {Card} card - The card to create
+   * @returns {Observable<Card>} An observable of the created card
+   */
+  createCard(card: Card): Observable<Card> {
+    return this.http.post<Card>(this.apiUrl, card);
+  }
+
+  /**
+   * Update an existing card on the server
+   * @param {number} cardId - The ID of the card to update
+   * @param {Partial<Card>} cardData - The new data for the card
+   * @returns {Observable<Card>} An observable of the updated card
+   */
+  updateCard(cardId: number, cardData: Partial<Card>): Observable<Card> {
+    return this.http.put<Card>(`${this.apiUrl}/${cardId}`, cardData);
+  }
 }

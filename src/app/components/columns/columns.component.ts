@@ -6,11 +6,14 @@ import { CardService } from '../../services/card.service';
 import { Card } from '../../models/card.model';
 import { Column } from '../../models/column.model';
 import {ColumnService} from "../../services/column.service";
+import {MatIcon} from "@angular/material/icon";
+import {CardFormComponent} from "../forms/card-form/card-form.component";
+import {MatDialog} from "@angular/material/dialog";
 
 @Component({
   selector: 'app-columns',
   standalone: true,
-  imports: [CommonModule, MatCardModule, MatButtonModule],
+  imports: [CommonModule, MatCardModule, MatButtonModule, MatIcon],
   templateUrl: './columns.component.html',
   styleUrls: ['./columns.component.css']
 })
@@ -20,7 +23,7 @@ export class ColumnsComponent implements OnInit {
   columns: Column[] = [];
   error: string | null = null;
 
-  constructor(private cardService: CardService, private columnService: ColumnService) {}
+  constructor(private cardService: CardService, private columnService: ColumnService, private dialog: MatDialog) {}
 
   ngOnInit(): void {
     this.fetchCards();
@@ -50,7 +53,7 @@ export class ColumnsComponent implements OnInit {
     this.columnService.getColumns().subscribe(
       (data: Column[]) => {
         this.columns = data;
-        this.error = this.columns.length === 0 ? 'Aucune colonne disponible.' : null;  // Message if no columns
+        this.error = this.columns.length === 0 ? 'Aucune colonne disponible.' : null;
       },
       (error) => {
         this.error = 'Échec du chargement des colonnes. Veuillez réessayer plus tard.';
@@ -133,4 +136,25 @@ export class ColumnsComponent implements OnInit {
   toggleAnswer(card: Card): void {
     card.showAnswer = !card.showAnswer;
   }
+
+  /**
+   * Open the create card modal
+   */
+  openCreateCardModal(columnId: number): void {
+    const dialogRef = this.dialog.open(CardFormComponent, {
+      width: '400px',
+      data: {
+        card: null,
+        selectedTagId: this.selectedTags.length === 1 ? this.selectedTags[0] : null,
+        columnId: columnId
+      }    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        this.fetchCards();
+      }
+    });
+  }
+
+
 }

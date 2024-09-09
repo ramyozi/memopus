@@ -1,4 +1,7 @@
 <div class="tags-container">
+  <button mat-icon-button color="primary" (click)="openCreateTagModal()">
+    <mat-icon>add</mat-icon>
+  </button>
   <div *ngIf="error" class="error-message">{{ error }}</div>
   <div *ngIf="!error">
     <button mat-button *ngFor="let tag of tags"
