@@ -1,13 +1,15 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import {map, Observable} from 'rxjs';
 import { Tag } from '../models/tag.model';
+import {Card} from "../models/card.model";
 
 @Injectable({
   providedIn: 'root'
 })
 export class TagService {
   private apiUrl = 'http://localhost:3000/tags';
+  private cardsUrl = 'http://localhost:3000/cards';
 
   constructor(private http: HttpClient) {}
 
@@ -45,5 +47,16 @@ export class TagService {
    */
   deleteTag(tagId: number): Observable<void> {
     return this.http.delete<void>(`${this.apiUrl}/${tagId}`);
+  }
+
+  /**
+   * Verify if the tag has associated cards.
+   * @param {number} tagId - The ID of the tag to check.
+   * @returns {Observable<boolean>} - True if the tag has associated cards, false otherwise.
+   */
+  hasAssociatedCards(tagId: number): Observable<boolean> {
+    return this.http.get<Card[]>(`${this.cardsUrl}?tag=${tagId}`).pipe(
+      map(cards => cards.length > 0)
+    );
   }
 }

@@ -7,6 +7,7 @@ import {Tag} from "../../../models/tag.model";
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {TagService} from "../../../services/tag.service";
 import {MatInputModule} from "@angular/material/input";
+import {MatIconModule} from "@angular/material/icon";
 
 @Component({
   selector: 'app-tag-form',
@@ -17,13 +18,15 @@ import {MatInputModule} from "@angular/material/input";
     MatDialogModule,
     MatButtonModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatIconModule
   ],  templateUrl: './tag-form.component.html',
   styleUrls: ['./tag-form.component.css']
 })
 export class TagFormComponent implements OnInit {
   tagForm: FormGroup;
   isEditMode: boolean;
+  hasCards: boolean = false;
 
   constructor(
     private fb: FormBuilder,
@@ -37,8 +40,11 @@ export class TagFormComponent implements OnInit {
     });
   }
 
-  ngOnInit(): void {}
-
+  ngOnInit(): void {
+    if (this.isEditMode && this.data.tag) {
+      this.verifyTagHasCards();
+    }
+  }
   onSubmit(): void {
     if (this.tagForm.valid) {
       if (this.isEditMode) {
@@ -53,6 +59,33 @@ export class TagFormComponent implements OnInit {
       }
     }
   }
+
+
+  /**
+   * Verify if the tag has associated cards.
+   */
+  verifyTagHasCards(): void {
+    this.tagService.hasAssociatedCards(this.data.tag!.id).subscribe((hasCards) => {
+      this.hasCards = hasCards;
+    });
+  }
+
+  /**
+   * Delete the tag if it has no associated cards.
+   */
+  deleteTag(): void {
+    if (this.hasCards) {
+      alert("Ce tag est associé à des cartes et ne peut pas être supprimé.");
+      return;
+    }
+
+    if (this.data.tag) {
+      this.tagService.deleteTag(this.data.tag.id).subscribe(() => {
+        this.dialogRef.close(true);
+      });
+    }
+  }
+
 
   onCancel(): void {
     this.dialogRef.close();

@@ -9,5 +9,7 @@
   <div class="form-actions">
     <button mat-button type="button" (click)="onCancel()">Annuler</button>
     <button mat-raised-button color="primary" type="submit">{{ isEditMode ? 'Mettre à jour' : 'Créer' }}</button>
-  </div>
+    <button *ngIf="isEditMode" mat-icon-button color="warn" (click)="deleteTag()">
+      <mat-icon>delete</mat-icon>
+    </button>  </div>
 </form>

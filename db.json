@@ -14,7 +14,7 @@
       "answer": ">>",
       "description": "Opérateur pour décaler les bits vers la droite.",
       "tag": "1",
-      "column": "1"
+      "column": "2"
     },
     {
       "id": "3",
@@ -46,7 +46,7 @@
       "answer": "flex",
       "description": "Propriété pour créer des layouts flexibles.",
       "tag": "4",
-      "column": "1"
+      "column": "3"
     },
     {
       "id": "7",
@@ -57,52 +57,12 @@
       "column": "1"
     },
     {
-      "id": "8",
-      "question": "Comment déclarer un composant en Angular?",
-      "answer": "@Component",
-      "description": "Décorateur pour déclarer un nouveau composant.",
-      "tag": "5",
-      "column": "1"
-    },
-    {
-      "id": "9",
-      "question": "Qu'est-ce qu'un 'Hook' en React?",
-      "answer": "Hook",
-      "description": "Fonction permettant d'utiliser l'état dans les composants fonctionnels.",
-      "tag": "6",
-      "column": "1"
-    },
-    {
-      "id": "10",
-      "question": "Syntaxe de base pour un composant fonctionnel en React?",
-      "answer": "const Component = () => {}",
-      "description": "Déclaration d'un composant fonctionnel en React.",
-      "tag": "6",
-      "column": "1"
-    },
-    {
-      "id": "11",
-      "question": "Commande pour installer un paquet npm en Node.js?",
-      "answer": "npm install",
-      "description": "Commande utilisée pour installer des modules Node.js.",
-      "tag": "7",
-      "column": "1"
-    },
-    {
       "id": "12",
       "question": "Comment définir une variable en SQL?",
       "answer": "DECLARE",
       "description": "Instruction pour déclarer une nouvelle variable locale.",
       "tag": "8",
       "column": "1"
-    },
-    {
-      "id": "13",
-      "question": "Commande pour démarrer un conteneur Docker?",
-      "answer": "docker run",
-      "description": "Utilisé pour lancer des conteneurs Docker à partir d'une image.",
-      "tag": "9",
-      "column": "2"
     },
     {
       "id": "14",
@@ -171,7 +131,8 @@
   "tags": [
     {
       "label": "JavaScript test",
-      "id": "1"
+      "id": "1",
+      "color": "#f0db4f"
     },
     {
       "id": "2",
@@ -186,20 +147,8 @@
       "label": "CSS"
     },
     {
-      "id": "5",
-      "label": "Angular"
-    },
-    {
-      "id": "6",
-      "label": "React"
-    },
-    {
-      "id": "7",
-      "label": "Node.js"
-    },
-    {
-      "id": "8",
-      "label": "SQL"
+      "label": "Angular",
+      "id": "5"
     },
     {
       "id": "9",
@@ -208,10 +157,6 @@
     {
       "id": "51de",
       "label": "test"
-    },
-    {
-      "id": "1dee",
-      "label": "hahaaha"
     }
   ],
   "columns": [
@@ -222,7 +167,7 @@
     },
     {
       "id": "2",
-      "label": "In Progress test",
+      "label": "In Progress test 3",
       "order": 2
     },
     {
