@@ -9,11 +9,12 @@ import {MatInputModule} from "@angular/material/input";
 import {FormsModule} from "@angular/forms";
 import {MatDialog} from "@angular/material/dialog";
 import {AnswerCheckComponent} from "../forms/answer-check/answer-check.component";
+import {MatIcon} from "@angular/material/icon";
 
 @Component({
   selector: 'app-cards',
   standalone: true,
-  imports: [CommonModule, MatCardModule, MatButtonModule, MatFormFieldModule, MatInputModule, FormsModule],
+  imports: [CommonModule, MatCardModule, MatButtonModule, MatFormFieldModule, MatInputModule, FormsModule, MatIcon],
   templateUrl: './cards.component.html',
   styleUrls: ['./cards.component.css']
 })
@@ -37,42 +38,6 @@ export class CardsComponent implements OnInit, OnChanges {
   }
 
   /**
-   * Toggle visibility of the answer input form
-   * @param {number} cardId - The ID of the card for which to toggle the input form
-   */
-  toggleInput(cardId: number): void {
-    this.showInput[cardId] = !this.showInput[cardId];
-  }
-
-  /**
-   * Compare proposed answer to the correct answer character by character.
-   * @param {Card} card - The card for which the answer is being checked.
-   */
-  checkAnswer(card: Card): void {
-    const proposed = this.proposedAnswers[card.id] || '';
-    const answer = card.answer;
-    const comparison = [];
-
-    for (let i = 0; i < Math.max(proposed.length, answer.length); i++) {
-      comparison.push({
-        char: proposed[i] || '_',
-        correct: proposed[i] === answer[i]
-      });
-    }
-
-    this.answerComparisons[card.id] = comparison;
-  }
-
-  /**
-   * Check if the proposed answer contains any incorrect characters.
-   * @param {number} cardId - The ID of the card for which to check the proposed answer.
-   * @returns {boolean} - True if the proposed answer contains any incorrect characters, false otherwise
-    */
-  hasIncorrectCharacters(cardId: number): boolean {
-    return this.answerComparisons[cardId]?.some((char) => !char.correct);
-  }
-
-  /**
    * Check if the proposed answer is correct.
    * @param {Card} card - The card for which to check the proposed answer.
    * @returns {boolean} - True if the proposed answer is correct, false otherwise
@@ -91,4 +56,13 @@ export class CardsComponent implements OnInit, OnChanges {
     });
   }
 
+  /**
+   * Handle drag start event for a card
+   * @param {DragEvent} event - The drag event
+   * @param {Card} card - The card being dragged
+   */
+  onDragStart(event: DragEvent, card: Card): void {
+    event.dataTransfer?.setData('text/plain', card.id.toString());
+    event.dataTransfer!.effectAllowed = 'move';
+  }
 }

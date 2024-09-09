@@ -1,9 +1,12 @@
 <div *ngIf="cards.length === 0" class="error-message">Pas de cartes</div>
 <div class="card-container row" [style.grid-template-columns]="'repeat(' + columns + ', 1fr)'">
   <div *ngFor="let card of cards" class="col-md-4 mb-4">
-    <mat-card class="card">
+    <mat-card class="card" [attr.draggable]="true" (dragstart)="onDragStart($event, card)">
       <mat-card-title class="card-title">
         {{ card.question }}
+        <button mat-icon-button class="drag-handle" (mousedown)="$event.stopPropagation()">
+          <mat-icon>drag_indicator</mat-icon>
+        </button>
       </mat-card-title>
       <mat-card-content>
         <p>{{ card.description }}</p>
