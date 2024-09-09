@@ -2,102 +2,233 @@
   "cards": [
     {
       "id": 1,
-      "question": "Qu'est-ce que le 'hoisting' en JavaScript?",
-      "answer": "Le 'hoisting' est un comportement de JavaScript où les déclarations de variables et de fonctions sont déplacées en haut de leur contexte d'exécution lors de la compilation.",
-      "description": "Concept fondamental en JavaScript concernant l'ordre de traitement des variables et fonctions.",
-      "tag": 1,
-      "column": 1
+      "question": "Qu'est-ce que 'SELECT' en SQL?",
+      "answer": "Commande de requête",
+      "description": "Commande de base pour interroger une base de données.",
+      "tag": "8",
+      "column": "1"
     },
     {
       "id": 2,
-      "question": "Comment déclare-t-on une fonction en Python?",
-      "answer": "On utilise le mot-clé 'def' suivi du nom de la fonction et des parenthèses.",
-      "description": "Méthode de déclaration de fonctions en Python.",
-      "tag": 2,
-      "column": 1
+      "question": "Symbole de décalage à droite en JavaScript?",
+      "answer": ">>",
+      "description": "Opérateur pour décaler les bits vers la droite.",
+      "tag": "1",
+      "column": "1"
     },
     {
       "id": 3,
-      "question": "Quelle est la différence entre '==' et '===' en JavaScript?",
-      "answer": "'==' compare les valeurs après conversion de type, tandis que '===' compare les valeurs et les types sans conversion.",
-      "description": "Différence entre les comparaisons en JavaScript.",
-      "tag": 1,
-      "column": 1
+      "question": "Mot clé pour créer une variable en Python?",
+      "answer": "var",
+      "description": "Mot clé incorrect pour déclaration de variable en Python.",
+      "tag": "2",
+      "column": "2"
     },
     {
       "id": 4,
-      "question": "Comment créer un lien hypertexte en HTML?",
-      "answer": "On utilise la balise <a> avec l'attribut 'href'.",
-      "description": "Création de liens hypertextes en HTML.",
-      "tag": 3,
-      "column": 1
+      "question": "Mot clé pour imprimer en Python?",
+      "answer": "print",
+      "description": "Utilisé pour afficher du texte ou des variables.",
+      "tag": "2",
+      "column": "2"
     },
     {
       "id": 5,
-      "question": "Qu'est-ce que Flexbox en CSS?",
-      "answer": "Flexbox est un module de disposition en CSS qui permet de concevoir des mises en page flexibles.",
-      "description": "Technique de mise en page moderne en CSS.",
-      "tag": 4,
-      "column": 1
+      "question": "Comment créer une liste en Python?",
+      "answer": "[]",
+      "description": "Utilisez les crochets pour initialiser une liste.",
+      "tag": "2",
+      "column": "2"
     },
     {
       "id": 6,
-      "question": "À quoi sert le composant 'Router' en Angular?",
-      "answer": "Le composant 'Router' est utilisé pour la navigation entre les différentes vues de l'application Angular.",
-      "description": "Concept de navigation en Angular.",
-      "tag": 5,
-      "column": 1
+      "question": "Que fait 'flex' en CSS?",
+      "answer": "flex",
+      "description": "Propriété pour créer des layouts flexibles.",
+      "tag": "4",
+      "column": "1"
     },
     {
       "id": 7,
-      "question": "Comment gérer l'état dans une application React?",
-      "answer": "En utilisant des hooks comme useState et useReducer ou des bibliothèques comme Redux.",
-      "description": "Gestion de l'état dans les applications React.",
-      "tag": 6,
-      "column": 1
+      "question": "Comment lier un événement en Angular?",
+      "answer": "(event)",
+      "description": "Syntaxe pour attacher un gestionnaire d'événements.",
+      "tag": "5",
+      "column": "1"
     },
     {
       "id": 8,
-      "question": "Qu'est-ce que 'npm' et à quoi sert-il dans Node.js?",
-      "answer": "'npm' est le gestionnaire de paquets par défaut de Node.js, utilisé pour installer des modules.",
-      "description": "Gestion des modules et paquets avec npm.",
-      "tag": 7,
-      "column": 1
+      "question": "Comment déclarer un composant en Angular?",
+      "answer": "@Component",
+      "description": "Décorateur pour déclarer un nouveau composant.",
+      "tag": "5",
+      "column": "1"
     },
     {
       "id": 9,
-      "question": "Qu'est-ce qu'une jointure (JOIN) en SQL?",
-      "answer": "Une jointure est utilisée pour combiner des lignes de deux ou plusieurs tables, basées sur une condition commune.",
-      "description": "Concept fondamental pour interroger des bases de données relationnelles.",
-      "tag": 8,
-      "column": 1
+      "question": "Qu'est-ce qu'un 'Hook' en React?",
+      "answer": "Hook",
+      "description": "Fonction permettant d'utiliser l'état dans les composants fonctionnels.",
+      "tag": "6",
+      "column": "1"
     },
     {
       "id": 10,
-      "question": "Comment créer une image Docker à partir d'un Dockerfile?",
-      "answer": "On utilise la commande 'docker build' suivie du chemin vers le Dockerfile.",
-      "description": "Création d'images Docker avec Dockerfile.",
-      "tag": 9,
-      "column": 1
+      "question": "Syntaxe de base pour un composant fonctionnel en React?",
+      "answer": "const Component = () => {}",
+      "description": "Déclaration d'un composant fonctionnel en React.",
+      "tag": "6",
+      "column": "1"
+    },
+    {
+      "id": 11,
+      "question": "Commande pour installer un paquet npm en Node.js?",
+      "answer": "npm install",
+      "description": "Commande utilisée pour installer des modules Node.js.",
+      "tag": "7",
+      "column": "1"
+    },
+    {
+      "id": 12,
+      "question": "Comment définir une variable en SQL?",
+      "answer": "DECLARE",
+      "description": "Instruction pour déclarer une nouvelle variable locale.",
+      "tag": "8",
+      "column": "1"
+    },
+    {
+      "id": 13,
+      "question": "Commande pour démarrer un conteneur Docker?",
+      "answer": "docker run",
+      "description": "Utilisé pour lancer des conteneurs Docker à partir d'une image.",
+      "tag": "9",
+      "column": "1"
+    },
+    {
+      "id": 14,
+      "question": "Propriété CSS pour centrer les éléments?",
+      "answer": "text-align: center",
+      "description": "Propriété pour aligner le texte au centre.",
+      "tag": "4",
+      "column": "1"
+    },
+    {
+      "id": 15,
+      "question": "Comment ajouter une classe CSS en JavaScript?",
+      "answer": "element.classList.add('class')",
+      "description": "Méthode pour ajouter une classe à un élément du DOM.",
+      "tag": "1",
+      "column": "1"
+    },
+    {
+      "id": 16,
+      "question": "Comment créer un serveur HTTP en Node.js?",
+      "answer": "http.createServer()",
+      "description": "Utilise http pour créer des serveurs web.",
+      "tag": "7",
+      "column": "1"
+    },
+    {
+      "id": 17,
+      "question": "Mot clé pour l'héritage en Python?",
+      "answer": "extends",
+      "description": "Utilisé pour définir l'héritage de classe en Python.",
+      "tag": "2",
+      "column": "2"
+    },
+    {
+      "id": 18,
+      "question": "Mot clé pour l'héritage en JavaScript?",
+      "answer": "extends",
+      "description": "Utilisé pour définir l'héritage de classe.",
+      "tag": "1",
+      "column": "2"
+    },
+    {
+      "id": 19,
+      "question": "Comment mettre à jour l'état en React?",
+      "answer": "setState()",
+      "description": "Fonction pour mettre à jour l'état d'un composant.",
+      "tag": "6",
+      "column": "3"
+    },
+    {
+      "id": 20,
+      "question": "Mot clé pour une boucle infinie en Python?",
+      "answer": "while True",
+      "description": "Structure de contrôle pour créer une boucle sans fin.",
+      "tag": "2",
+      "column": "3"
     }
   ],
   "users": [
-    { "id": 1, "login": "y", "pwd": "y" }
+    {
+      "id": 1,
+      "login": "y",
+      "pwd": "y"
+    }
   ],
   "tags": [
-    { "id": 1, "label": "JavaScript" },
-    { "id": 2, "label": "Python" },
-    { "id": 3, "label": "HTML" },
-    { "id": 4, "label": "CSS" },
-    { "id": 5, "label": "Angular" },
-    { "id": 6, "label": "React" },
-    { "id": 7, "label": "Node.js" },
-    { "id": 8, "label": "SQL" },
-    { "id": 9, "label": "Docker" }
+    {
+      "id": 1,
+      "label": "JavaScript"
+    },
+    {
+      "id": 2,
+      "label": "Python"
+    },
+    {
+      "id": 3,
+      "label": "HTML"
+    },
+    {
+      "id": 4,
+      "label": "CSS"
+    },
+    {
+      "id": 5,
+      "label": "Angular"
+    },
+    {
+      "id": 6,
+      "label": "React"
+    },
+    {
+      "id": 7,
+      "label": "Node.js"
+    },
+    {
+      "id": 8,
+      "label": "SQL"
+    },
+    {
+      "id": 9,
+      "label": "Docker"
+    },
+    {
+      "id": "51de",
+      "label": "test"
+    },
+    {
+      "id": "1dee",
+      "label": "hahaaha"
+    }
   ],
   "columns": [
-    { "id": 1, "label": "To Do", "order": 1 },
-    { "id": 2, "label": "In Progress", "order": 2 },
-    { "id": 3, "label": "Done", "order": 3 }
+    {
+      "id": 1,
+      "label": "To Do",
+      "order": 1
+    },
+    {
+      "id": 2,
+      "label": "In Progress",
+      "order": 2
+    },
+    {
+      "id": 3,
+      "label": "Done",
+      "order": 3
+    }
   ]
 }

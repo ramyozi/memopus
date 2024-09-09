@@ -1,18 +1,15 @@
-<div *ngIf="error" class="error-message">{{ error }}</div>
-<div class="card-container row"
-     [style.grid-template-columns]="'repeat(' + columns + ', 1fr)'">
-  <div *ngFor="let card of filteredCards" class="col-md-4 mb-4">
+<div *ngIf="cards.length === 0" class="error-message">Pas de cartes</div>
+<div class="card-container row" [style.grid-template-columns]="'repeat(' + columns + ', 1fr)'">
+  <div *ngFor="let card of cards" class="col-md-4 mb-4">
     <mat-card class="card">
-      <mat-card-title (click)="toggleAnswer(card)" class="clickable">
+      <mat-card-title class="card-title">
         {{ card.question }}
       </mat-card-title>
       <mat-card-content>
         <p>{{ card.description }}</p>
-        <p *ngIf="card.showAnswer" class="answer">{{ card.answer }}</p>
+
+        <button mat-raised-button color="primary" (click)="openAnswerModal(card)">Proposer une réponse</button>
       </mat-card-content>
-      <button mat-button (click)="toggleAnswer(card)">
-        {{ card.showAnswer ? 'Masquer la réponse' : 'Afficher la réponse' }}
-      </button>
     </mat-card>
   </div>
 </div>
