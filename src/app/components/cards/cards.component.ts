@@ -82,7 +82,8 @@ export class CardsComponent implements OnInit, OnChanges {
       width: '600px',
       data: {
         question: card.question,
-        correctAnswer: card.answer
+        correctAnswer: card.answer,
+        description: card.description
       }
     });
 

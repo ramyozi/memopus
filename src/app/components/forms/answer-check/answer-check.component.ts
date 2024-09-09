@@ -28,7 +28,7 @@ export class AnswerCheckComponent {
   constructor(
     private fb: FormBuilder,
     private dialogRef: MatDialogRef<AnswerCheckComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: { question: string; correctAnswer: string }
+    @Inject(MAT_DIALOG_DATA) public data: { question: string, description: string; correctAnswer: string }
   ) {
     this.answerForm = this.fb.group({
       proposedAnswer: ['', Validators.required]
