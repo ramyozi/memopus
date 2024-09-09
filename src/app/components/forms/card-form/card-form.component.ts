@@ -9,7 +9,9 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';  // Import MatFormFieldModule
 import { MatInputModule } from '@angular/material/input';  // Import MatInputModule
 import { MatSelectModule } from '@angular/material/select';  // Import MatSelectModule
-import { MatOptionModule } from '@angular/material/core';  // Import MatOptionModule
+import { MatOptionModule } from '@angular/material/core';
+import {TagService} from "../../../services/tag.service";
+import {MatIconModule} from "@angular/material/icon";  // Import MatOptionModule
 
 @Component({
   selector: 'app-card-form',
@@ -22,8 +24,10 @@ import { MatOptionModule } from '@angular/material/core';  // Import MatOptionMo
     MatFormFieldModule,
     MatInputModule,
     MatSelectModule,
-    MatOptionModule
-  ],  templateUrl: './card-form.component.html',
+    MatOptionModule,
+    MatIconModule
+  ],
+  templateUrl: './card-form.component.html',
   styleUrls: ['./card-form.component.css']
 })
 export class CardFormComponent implements OnInit {
@@ -35,6 +39,7 @@ export class CardFormComponent implements OnInit {
     private fb: FormBuilder,
     private dialogRef: MatDialogRef<CardFormComponent>,
     private cardService: CardService,
+    private tagService: TagService,
     @Inject(MAT_DIALOG_DATA) public data: { card: Card | null; selectedTagId: number | null; columnId: number | null }
   ) {
     this.isEditMode = !!this.data.card;
@@ -55,7 +60,7 @@ export class CardFormComponent implements OnInit {
   }
 
   loadTags(): void {
-    this.cardService.getTags().subscribe(tags => {
+    this.tagService.getTags().subscribe(tags => {
       this.tags = tags;
     });
   }
@@ -73,6 +78,17 @@ export class CardFormComponent implements OnInit {
           this.dialogRef.close(true);
         });
       }
+    }
+  }
+
+  /**
+   * Delete the card.
+   */
+  deleteCard(): void {
+    if (this.data.card) {
+      this.cardService.deleteCard(this.data.card.id).subscribe(() => {
+        this.dialogRef.close(true);
+      });
     }
   }
 

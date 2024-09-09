@@ -1,7 +1,7 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
-import { CardService } from '../../services/card.service';
+import { TagService } from '../../services/tag.service';
 import { Tag } from '../../models/tag.model';
 import {MatIcon} from "@angular/material/icon";
 import {TagFormComponent} from "../forms/tag-form/tag-form.component";
@@ -22,9 +22,10 @@ export class TagsComponent implements OnInit {
   isAdminMode: boolean = false;
 
   @Output() tagSelectionChanged = new EventEmitter<number[]>();
+  @Output() tagsFetched = new EventEmitter<Tag[]>();
 
   constructor(
-    private cardService: CardService,
+    private tagService: TagService,
     private dialog: MatDialog,
     private adminService: AdminService
   ) {}
@@ -37,19 +38,35 @@ export class TagsComponent implements OnInit {
   }
 
   /**
-   * Fetch tags from the CardService
+   * Fetch tags from the TagService
    */
   fetchTags(): void {
-    this.cardService.getTags().subscribe(
+    this.tagService.getTags().subscribe(
       (data: Tag[]) => {
-        this.tags = data;
+        this.tags = data.map(tag => ({
+          ...tag,
+          color: this.assignColor(tag.id)
+        }));
         this.error = this.tags.length === 0 ? 'Aucun tag disponible.' : null;
+        this.tagsFetched.emit(this.tags);
       },
       (error) => {
         this.error = 'Échec du chargement des tags. Veuillez réessayer plus tard.';
         console.error('Error fetching tags:', error);
       }
     );
+  }
+
+  /**
+   * Assign a color based on the tag ID.
+   * @param {number} tagId - The tag ID.
+   * @returns {string} - The assigned color.
+   */
+  private assignColor(tagId: number): string {
+    const colors = [
+      '#FFEBEE', '#E3F2FD', '#E8F5E9', '#FFF3E0', '#F3E5F5', '#FCE4EC'
+    ];
+    return colors[tagId % colors.length];
   }
 
   /**

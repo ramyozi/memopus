@@ -12,17 +12,26 @@ import {AnswerCheckComponent} from "../forms/answer-check/answer-check.component
 import {MatIcon} from "@angular/material/icon";
 import {CardFormComponent} from "../forms/card-form/card-form.component";
 import {AdminService} from "../../services/admin.service";
+import {Tag} from "../../models/tag.model";
 
 @Component({
   selector: 'app-cards',
   standalone: true,
-  imports: [CommonModule, MatCardModule, MatButtonModule, MatFormFieldModule, MatInputModule, FormsModule, MatIcon],
+  imports: [CommonModule,
+    MatCardModule,
+    MatButtonModule,
+    MatFormFieldModule,
+    MatInputModule,
+    FormsModule,
+    MatIcon
+  ],
   templateUrl: './cards.component.html',
   styleUrls: ['./cards.component.css']
 })
 export class CardsComponent implements OnInit, OnChanges {
   @Input() cards: Card[] = [];
   @Input() columns: number = 3;
+  @Input() tags: Tag[] = [];
 
   @Output() cardUpdated = new EventEmitter<void>();
 
@@ -30,7 +39,7 @@ export class CardsComponent implements OnInit, OnChanges {
   isAdminMode: boolean = false;
 
 
-  constructor(private cardService: CardService, private dialog: MatDialog, private adminService: AdminService) {}
+  constructor(private dialog: MatDialog, private adminService: AdminService) {}
 
   ngOnInit(): void {
     this.adminService.adminMode$.subscribe((isAdmin) => {
@@ -91,5 +100,15 @@ export class CardsComponent implements OnInit, OnChanges {
   onDragStart(event: DragEvent, card: Card): void {
     event.dataTransfer?.setData('text/plain', card.id.toString());
     event.dataTransfer!.effectAllowed = 'move';
+  }
+
+  /**
+   * Fetch the color associated with the tag of the card.
+   * @param {number} tagId - The ID of the tag.
+   * @returns {string} - The color associated with the tag.
+   */
+  getTagColor(tagId: number): string {
+    const tag = this.tags.find(t => t.id === tagId);
+    return tag ? tag.color || 'ffffff' : 'ffffff';
   }
 }

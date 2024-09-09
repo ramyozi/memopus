@@ -24,14 +24,6 @@ export class CardService {
   }
 
   /**
-   * Fetch all tags from the server
-   * @returns {Observable<Tag[]>} An observable of tag data
-   */
-  getTags(): Observable<Tag[]> {
-    return this.http.get<Tag[]>(this.tagsUrl);
-  }
-
-  /**
    * Update the column of a card
    * @param {number} cardId - The ID of the card to update
    * @param {number} columnId - The new column ID for the card
@@ -66,5 +58,14 @@ export class CardService {
    */
   updateCard(cardId: number, cardData: Partial<Card>): Observable<Card> {
     return this.http.put<Card>(`${this.apiUrl}/${cardId}`, cardData);
+  }
+
+  /**
+   * Delete a card from the server
+   * @param {number} cardId - The ID of the card to delete
+   * @returns {Observable<void>} An observable of the deletion status
+   */
+  deleteCard(cardId: number): Observable<void> {
+    return this.http.delete<void>(`${this.apiUrl}/${cardId}`);
   }
 }

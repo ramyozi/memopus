@@ -11,8 +11,8 @@ import {CardFormComponent} from "../forms/card-form/card-form.component";
 import {MatDialog} from "@angular/material/dialog";
 import {CardsComponent} from "../cards/cards.component";
 import {AdminService} from "../../services/admin.service";
-import {TagFormComponent} from "../forms/tag-form/tag-form.component";
 import {ColumnFormComponent} from "../forms/column-form/column-form.component";
+import {Tag} from "../../models/tag.model";
 
 @Component({
   selector: 'app-columns',
@@ -23,6 +23,7 @@ import {ColumnFormComponent} from "../forms/column-form/column-form.component";
 })
 export class ColumnsComponent implements OnInit {
   @Input() selectedTags: number[] = [];
+  @Input() tags: Tag[] = [];
   cards: Card[] = [];
   columns: Column[] = [];
   error: string | null = null;
@@ -148,15 +149,6 @@ export class ColumnsComponent implements OnInit {
     }
   }
 
-
-  /**
-   * Handle click event
-   * @param {Card} card - The card to toggle
-   */
-  toggleAnswer(card: Card): void {
-    card.showAnswer = !card.showAnswer;
-  }
-
   /**
    * Open the create card modal
    */
@@ -197,7 +189,7 @@ export class ColumnsComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
-        this.fetchColumns();  // Refresh columns after updating
+        this.fetchColumns();
       }
     });
   }
