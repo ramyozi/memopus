@@ -2,20 +2,22 @@
 <div class="card-container row" [style.grid-template-columns]="'repeat(' + columns + ', 1fr)'">
   <div *ngFor="let card of cards" class="col-md-4 mb-4">
     <mat-card class="card" [ngStyle]="{ 'background-color': getTagColor(card.tag) }" [attr.draggable]="true" (dragstart)="onDragStart($event, card)">
-      <mat-card-title class="card-title">
-        {{ card.question }}
+      <div class="card-header">
+        <mat-card-title class="card-title">
+          {{ card.question }}
+        </mat-card-title>
         <button mat-icon-button class="drag-handle" (mousedown)="$event.stopPropagation()">
           <mat-icon>drag_indicator</mat-icon>
         </button>
-      </mat-card-title>
+      </div>
       <mat-card-content>
         <p>{{ card.description }}</p>
-
-        <button mat-raised-button color="primary" (click)="openAnswerModal(card)">Proposer une réponse</button>
-
-        <button *ngIf="isAdminMode" mat-icon-button color="primary" (click)="openEditCardModal(card)">
-          <mat-icon>edit</mat-icon>
-        </button>
+        <div class="card-actions">
+          <button mat-raised-button color="primary" (click)="openAnswerModal(card)">Proposer une réponse</button>
+          <button *ngIf="isAdminMode" mat-icon-button color="primary" (click)="openEditCardModal(card)">
+            <mat-icon>edit</mat-icon>
+          </button>
+        </div>
       </mat-card-content>
     </mat-card>
   </div>

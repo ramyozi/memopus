@@ -1,5 +1,9 @@
 <div class="dashboard-container">
   <h1>Welcome to the Dashboard</h1>
-  <app-tags (tagSelectionChanged)="onTagSelectionChanged($event)" (tagsFetched)="onTagsFetched($event)"></app-tags>
-  <app-columns [selectedTags]="selectedTags" [tags]="tags"></app-columns>
+  <div class="filters-container">
+    <app-tags (tagSelectionChanged)="onTagSelectionChanged($event)" (tagsFetched)="onTagsFetched($event)"></app-tags>
+  </div>
+  <div class="columns-container">
+    <app-columns [selectedTags]="selectedTags" [tags]="tags"></app-columns>
+  </div>
 </div>

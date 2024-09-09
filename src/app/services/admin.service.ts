@@ -5,18 +5,19 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root'
 })
 export class AdminService {
-  private adminMode = new BehaviorSubject<boolean>(false);
+  private adminModeSubject = new BehaviorSubject<boolean>(false);
 
   /**
    * Observable for the current admin mode state.
    */
-  adminMode$ = this.adminMode.asObservable();
+  adminMode$ = this.adminModeSubject.asObservable();
 
   /**
    * Toggles the current state of admin mode.
    */
   toggleAdminMode(): void {
-    this.adminMode.next(!this.adminMode.value);
+    const newAdminMode = !this.adminModeSubject.value;
+    this.adminModeSubject.next(newAdminMode);
   }
 
   /**
@@ -24,6 +25,6 @@ export class AdminService {
    * @returns {boolean} The current state of admin mode.
    */
   isAdminMode(): boolean {
-    return this.adminMode.value;
+    return this.adminModeSubject.value;
   }
 }

@@ -14,7 +14,7 @@
       "answer": ">>",
       "description": "Opérateur pour décaler les bits vers la droite.",
       "tag": "1",
-      "column": "2"
+      "column": "3"
     },
     {
       "id": "3",
@@ -22,7 +22,7 @@
       "answer": "var",
       "description": "Mot clé incorrect pour déclaration de variable en Python.",
       "tag": "2",
-      "column": "2"
+      "column": "3"
     },
     {
       "id": "4",
@@ -30,7 +30,7 @@
       "answer": "print",
       "description": "Utilisé pour afficher du texte ou des variables.",
       "tag": "2",
-      "column": "2"
+      "column": "1"
     },
     {
       "id": "5",
@@ -38,7 +38,7 @@
       "answer": "[]",
       "description": "Utilisez les crochets pour initialiser une liste.",
       "tag": "2",
-      "column": "2"
+      "column": "3"
     },
     {
       "id": "6",
@@ -46,7 +46,7 @@
       "answer": "flex",
       "description": "Propriété pour créer des layouts flexibles.",
       "tag": "4",
-      "column": "3"
+      "column": "1"
     },
     {
       "id": "7",
@@ -70,7 +70,7 @@
       "answer": "text-align: center",
       "description": "Propriété pour aligner le texte au centre.",
       "tag": "4",
-      "column": "2"
+      "column": "3"
     },
     {
       "id": "15",
@@ -94,7 +94,7 @@
       "answer": "extends",
       "description": "Utilisé pour définir l'héritage de classe en Python.",
       "tag": "2",
-      "column": "2"
+      "column": "3"
     },
     {
       "id": "18",
@@ -102,14 +102,14 @@
       "answer": "extends",
       "description": "Utilisé pour définir l'héritage de classe.",
       "tag": "1",
-      "column": "2"
+      "column": "3"
     },
     {
       "question": "Comment mettre à jour l'état en React?",
       "answer": "setState()",
       "description": "Fonction pour mettre à jour l'état d'un composant.",
       "tag": "4",
-      "column": "3",
+      "column": "2",
       "id": "19"
     },
     {

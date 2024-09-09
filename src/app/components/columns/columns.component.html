@@ -1,15 +1,19 @@
 <div *ngIf="error" class="error-message">{{ error }}</div>
 <div class="columns-container">
   <div *ngFor="let column of columns" class="column" (dragover)="onDragOver($event)" (drop)="onDrop($event, column.id)">
-    <button mat-icon-button color="primary" (click)="openCreateCardModal(column.id)">
-      <mat-icon>add</mat-icon>
-    </button>
-    <h2>
-      {{ column.label }} ({{ getCardCountForColumn(column.id) }})
-      <button *ngIf="isAdminMode" mat-icon-button color="primary" (click)="openUpdateColumnModal(column)">
-        <mat-icon>settings</mat-icon>
-      </button>
-    </h2>
+    <div class="column-header">
+      <h2 class="column-title">
+        {{ column.label }} ({{ getCardCountForColumn(column.id) }})
+      </h2>
+      <div class="column-actions">
+        <button mat-icon-button color="primary" (click)="openCreateCardModal(column.id)">
+          <mat-icon>add</mat-icon>
+        </button>
+        <button *ngIf="isAdminMode" mat-icon-button color="primary" (click)="openUpdateColumnModal(column)">
+          <mat-icon>settings</mat-icon>
+        </button>
+      </div>
+    </div>
     <div class="cards-container">
       <app-cards [cards]="getCardsForColumn(column.id)" [tags]="tags" [columns]="1" (cardUpdated)="fetchCards()"></app-cards>
       <ng-template #noCards>

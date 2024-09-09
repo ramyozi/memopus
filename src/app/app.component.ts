@@ -4,18 +4,28 @@ import { AuthService } from './services/auth.service';
 import { AdminService } from './services/admin.service';
 import { CommonModule } from "@angular/common";
 import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from "@angular/material/icon";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterModule, CommonModule, MatButtonModule],
+  imports: [RouterModule, CommonModule, MatButtonModule, MatIconModule],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
   title = 'memopus';
+  isAdminMode = false;
 
-  constructor(private authService: AuthService, private router: Router, private adminService: AdminService) {}
+  constructor(
+    private authService: AuthService,
+    private router: Router,
+    private adminService: AdminService
+  ) {
+    this.adminService.adminMode$.subscribe((isAdmin) => {
+      this.isAdminMode = isAdmin;
+    });
+  }
 
   /**
    * Checks if the user is authenticated.
@@ -34,7 +44,7 @@ export class AppComponent {
   }
 
   /**
-   * Toggles the administration mode.
+   * Toggles the administration mode and updates the state.
    */
   toggleAdminMode(): void {
     this.adminService.toggleAdminMode();

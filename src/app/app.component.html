@@ -1,9 +1,15 @@
 <div class="app-container">
   <nav class="navbar">
-    <a *ngIf="isAuthenticated()" (click)="logout()">Logout</a>
-    <button *ngIf="isAuthenticated()" mat-button (click)="toggleAdminMode()">
-      Activer le mode administration
-    </button>
+    <div *ngIf="isAuthenticated()" class="navbar-actions">
+      <span *ngIf="isAdminMode" class="admin-indicator">Mode Administrateur Activé</span>
+      <button mat-stroked-button (click)="toggleAdminMode()" color="primary" class="admin-toggle-button">
+        <mat-icon>{{ isAdminMode ? 'toggle_on' : 'toggle_off' }}</mat-icon>
+        {{ isAdminMode ? 'Désactiver le mode administration' : 'Activer le mode administration' }}
+      </button>
+      <button mat-stroked-button color="warn" (click)="logout()" class="logout-button">
+        <mat-icon>exit_to_app</mat-icon> Déconnecter
+      </button>
+    </div>
   </nav>
   <main class="main container">
     <router-outlet></router-outlet>
