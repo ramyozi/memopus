@@ -5,7 +5,7 @@
   <div *ngIf="error" class="error-message">{{ error }}</div>
   <div *ngIf="!error">
     <button mat-button *ngFor="let tag of tags"
-            [ngStyle]="{ 'background-color': tag.color }"
+            [ngStyle]="getTagStyle(tag)"
             [class.selected]="selectedTags.has(tag.id)"
             (click)="toggleTagSelection(tag.id)">
       {{ tag.label }}

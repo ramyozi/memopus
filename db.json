@@ -1,12 +1,12 @@
 {
   "cards": [
     {
-      "id": "1",
       "question": "Qu'est-ce que 'SELECT' en SQL?",
       "answer": "Commande de requête",
       "description": "Commande de base pour interroger une base de données.",
-      "tag": "8",
-      "column": "2"
+      "tag": "3",
+      "column": "1",
+      "id": "1"
     },
     {
       "id": "2",
@@ -57,12 +57,12 @@
       "column": "1"
     },
     {
-      "id": "12",
       "question": "Comment définir une variable en SQL?",
       "answer": "DECLARE",
       "description": "Instruction pour déclarer une nouvelle variable locale.",
-      "tag": "8",
-      "column": "1"
+      "tag": "2",
+      "column": "1",
+      "id": "12"
     },
     {
       "id": "14",
@@ -70,7 +70,7 @@
       "answer": "text-align: center",
       "description": "Propriété pour aligner le texte au centre.",
       "tag": "4",
-      "column": "1"
+      "column": "2"
     },
     {
       "id": "15",
@@ -81,12 +81,12 @@
       "column": "1"
     },
     {
-      "id": "16",
       "question": "Comment créer un serveur HTTP en Node.js?",
       "answer": "http.createServer()",
       "description": "Utilise http pour créer des serveurs web.",
-      "tag": "7",
-      "column": "1"
+      "tag": "9",
+      "column": "1",
+      "id": "16"
     },
     {
       "id": "17",
@@ -105,12 +105,12 @@
       "column": "2"
     },
     {
-      "id": "19",
       "question": "Comment mettre à jour l'état en React?",
       "answer": "setState()",
       "description": "Fonction pour mettre à jour l'état d'un composant.",
-      "tag": "6",
-      "column": "2"
+      "tag": "4",
+      "column": "3",
+      "id": "19"
     },
     {
       "question": "Mot clé pour une boucle infinie en Python?",
@@ -167,7 +167,7 @@
     },
     {
       "id": "2",
-      "label": "In Progress test 3",
+      "label": "In Progress",
       "order": 2
     },
     {

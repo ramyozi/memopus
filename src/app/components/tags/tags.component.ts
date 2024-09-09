@@ -7,6 +7,7 @@ import {MatIcon} from "@angular/material/icon";
 import {TagFormComponent} from "../forms/tag-form/tag-form.component";
 import {MatDialog} from "@angular/material/dialog";
 import {AdminService} from "../../services/admin.service";
+import {LightenDarkenColor} from "../../hooks/edit-color";
 
 @Component({
   selector: 'app-tags',
@@ -128,5 +129,36 @@ export class TagsComponent implements OnInit {
         this.fetchTags();
       }
     });
+  }
+
+
+  /**
+   * Get the style for a tag.
+   * @param tag - The tag to get the style for.
+   */
+  getTagStyle(tag: Tag): any {
+    const isSelected = this.selectedTags.has(tag.id);
+    return {
+      'background-color': isSelected ? this.darkenColor(tag.color || 'ffffff', 20) : tag.color,
+      'color': isSelected ? '#000000' : '#000000',
+      'border': isSelected ? '2px solid #ffffff' : '1px solid #cccccc',
+      'box-shadow': isSelected ? '0 4px 8px rgba(0, 0, 0, 0.2)' : 'none',
+      'padding': isSelected ? '16px 24px' : '8px 16px',
+      'font-size': isSelected ? '1.2em' : '1em',
+      'border-radius': isSelected ? '12px' : '8px',
+      'transition': 'all 0.3s ease'
+    };
+  }
+
+
+  /**
+   * Darken a color by a specified amount.
+   * @param {string} color - The color to darken.
+   * @param {number} amount - The amount to darken the color by.
+   *
+   * @returns {string} - The darkened color.
+   */
+  darkenColor(color: string, amount: number): string {
+    return LightenDarkenColor(color, -amount);
   }
 }
