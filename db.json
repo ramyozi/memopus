@@ -13,7 +13,7 @@
       "answer": "Pouvoir",
       "description": "Thanos obtient la Pierre de Pouvoir de Xandar.",
       "tag": "2",
-      "column": "2",
+      "column": "1",
       "id": "2"
     },
     {
@@ -37,7 +37,7 @@
       "answer": "Walter White",
       "description": "Alias de Walter White dans Breaking Bad.",
       "tag": "5",
-      "column": "2",
+      "column": "3",
       "id": "5"
     },
     {
@@ -109,7 +109,7 @@
       "answer": "Professor",
       "description": "Connu sous le nom de 'Professor Hulk' dans les comics et les films.",
       "tag": "2",
-      "column": "2",
+      "column": "1",
       "id": "14"
     },
     {
@@ -133,7 +133,7 @@
       "answer": "Car Wash",
       "description": "Walter utilise son lave-auto comme blanchisserie d'argent.",
       "tag": "5",
-      "column": "2",
+      "column": "1",
       "id": "17"
     },
     {
@@ -173,7 +173,7 @@
       "answer": "Chris",
       "description": "Son vrai nom est Christopher Smith.",
       "tag": "10",
-      "column": "1",
+      "column": "2",
       "id": "22"
     },
     {
@@ -181,7 +181,7 @@
       "answer": "Jaune",
       "description": "Les papiers de Schrute Farms sont toujours jaunes.",
       "tag": "11",
-      "column": "2",
+      "column": "1",
       "id": "23"
     },
     {
@@ -245,7 +245,7 @@
       "answer": "Melfi",
       "description": "Dr. Jennifer Melfi, son psychiatre tout au long de la série.",
       "tag": "7",
-      "column": "1",
+      "column": "2",
       "id": "31"
     },
     {
@@ -269,7 +269,7 @@
       "answer": "Eaglemobile",
       "description": "Voiture customisée du personnage.",
       "tag": "10",
-      "column": "1",
+      "column": "2",
       "id": "34"
     },
     {
@@ -293,7 +293,7 @@
       "answer": "R2D2",
       "description": "R2D2 est le partenaire robotique de C-3PO.",
       "tag": "1",
-      "column": "1",
+      "column": "2",
       "id": "37"
     },
     {
@@ -317,8 +317,136 @@
       "answer": "Gotti",
       "description": "Référence au parrain John Gotti.",
       "tag": "7",
-      "column": "1",
+      "column": "2",
       "id": "40"
+    },
+    {
+      "id": "41",
+      "question": "Quel est le nom du personnage principal de la série Psych, qui prétend être médium ?",
+      "answer": "Shawn Spencer",
+      "description": "Shawn Spencer est le personnage principal, connu pour ses talents d'observation exceptionnels qu'il utilise pour résoudre des enquêtes tout en prétendant être un médium.",
+      "tag": "d300",
+      "column": "1"
+    },
+    {
+      "id": "42",
+      "question": "Quel est le nom du meilleur ami de Shawn, qui l'aide dans ses enquêtes ?",
+      "answer": "Gus",
+      "description": "Gus, de son vrai nom Burton Guster, est le meilleur ami et partenaire de Shawn. Il est souvent la voix de la raison.",
+      "tag": "d300",
+      "column": "1"
+    },
+    {
+      "id": "43",
+      "question": "Comment s'appelle le père de Shawn, ancien policier, qui l'aide souvent avec ses connaissances en enquête ?",
+      "answer": "Henry Spencer",
+      "description": "Henry Spencer est l'ancien policier et père de Shawn, qui lui a enseigné des techniques d'enquête dès son plus jeune âge.",
+      "tag": "d300",
+      "column": "1"
+    },
+    {
+      "id": "44",
+      "question": "Quel est le surnom que Shawn donne souvent à Gus ?",
+      "answer": "Magic Head",
+      "description": "Shawn utilise souvent des surnoms drôles pour Gus, mais 'Magic Head' est l'un des plus mémorables qu'il utilise fréquemment dans la série.",
+      "tag": "d300",
+      "column": "1"
+    },
+    {
+      "id": "45",
+      "question": "Quel est le nom du chef du gang que Gus a infiltré accidentellement en jouant à un concours de quiz en ligne sous le pseudo 'Lavender Gooms' ?",
+      "answer": "Joon",
+      "description": "Dans un épisode, Gus s'infiltre accidentellement dans un gang dirigé par Joon lorsqu'il utilise le pseudo 'Lavender Gooms' pour participer à un quiz en ligne.",
+      "tag": "d300",
+      "column": "1"
+    },
+    {
+      "id": 46,
+      "question": "Quel est le nom du restaurant fictif préféré de Shawn et Gus, qui apparaît fréquemment dans la série ?",
+      "answer": "Central Coast Pharmaceuticals",
+      "description": "Central Coast Pharmaceuticals est le restaurant fictif où Shawn et Gus vont souvent manger et qui devient un lieu emblématique pour leurs discussions et aventures.",
+      "tag": "d300",
+      "column": "1"
+    },
+    {
+      "id": 47,
+      "question": "Quel est le nom de la mascotte de l'école secondaire que Shawn et Gus fréquentent, que l'on voit dans l'épisode 'Murder?... Anyone?... Anyone?... Bueller?'",
+      "answer": "Le Mammouth",
+      "description": "Dans l'épisode 'Murder?... Anyone?... Anyone?... Bueller?', le Mammouth est la mascotte de l'école secondaire de Shawn et Gus, apparaissant comme un clin d'œil aux fans de longue date.",
+      "tag": "d300",
+      "column": "1"
+    },
+    {
+      "id": 48,
+      "question": "Quel est le nom du chat imaginaire de Shawn qu'il mentionne à plusieurs reprises au cours de la série ?",
+      "answer": "Mrs. Pickles",
+      "description": "Mrs. Pickles est un chat imaginaire que Shawn évoque dans plusieurs épisodes, souvent de manière humoristique, pour tromper les autres personnages.",
+      "tag": "d300",
+      "column": "1"
+    },
+    {
+      "id": 49,
+      "question": "Quelle boisson exotique que Gus adore est découverte par Shawn dans l'épisode 'Disco Didn't Die. It Was Murdered!' ?",
+      "answer": "Lassi",
+      "description": "Dans l'épisode 'Disco Didn't Die. It Was Murdered!', Shawn découvre que Gus est obsédé par le Lassi, une boisson indienne à base de yaourt.",
+      "tag": "d300",
+      "column": "1"
+    },
+    {
+      "id": 50,
+      "question": "Quel est le nom complet de l'alter ego de Gus qu'il utilise dans l'épisode 'American Duos' ?",
+      "answer": "Sapphire Birch",
+      "description": "Dans l'épisode 'American Duos', Gus utilise l'alter ego 'Sapphire Birch' pour participer à un concours de talents avec Shawn.",
+      "tag": "d300",
+      "column": "1"
+    },
+    {
+      "id": 51,
+      "question": "Quel objet précis Shawn a-t-il offert à Juliet lors de leur premier Noël ensemble, objet qui est mentionné plus tard comme un souvenir important ?",
+      "answer": "Une boule à neige de Vancouver",
+      "description": "Shawn offre à Juliet une boule à neige de Vancouver lors de leur premier Noël ensemble. Cet objet est mentionné plus tard comme un souvenir symbolique de leur relation.",
+      "tag": "d300",
+      "column": "1"
+    },
+    {
+      "id": 52,
+      "question": "Quel est le nom de la société de transport en commun fictive que Gus mentionne comme sa 'boîte de rêve' où il veut travailler ?",
+      "answer": "Thunderbird Express",
+      "description": "Gus mentionne 'Thunderbird Express' comme étant son employeur de rêve, une société de transport en commun fictive dont il parle avec enthousiasme.",
+      "tag": "d300",
+      "column": "1"
+    },
+    {
+      "id": 53,
+      "question": "Quel est le nom de l'assistant du shérif fictif que Shawn invente lorsqu'il se fait passer pour un policier dans l'épisode 'Shawn (and Gus) of the Dead' ?",
+      "answer": "Chesterfield McMillan",
+      "description": "Dans l'épisode 'Shawn (and Gus) of the Dead', Shawn prétend être un policier et invente un assistant du shérif nommé Chesterfield McMillan pour ajouter de la crédibilité à son histoire.",
+      "tag": "d300",
+      "column": "1"
+    },
+    {
+      "id": 54,
+      "question": "Quelle maladie rare et fictive Shawn prétend-il avoir dans l'épisode 'Black and Tan: A Crime of Fashion' pour infiltrer le monde de la mode ?",
+      "answer": "Superficial Glossitis",
+      "description": "Dans l'épisode 'Black and Tan: A Crime of Fashion', Shawn prétend souffrir de 'Superficial Glossitis', une maladie inventée, afin de s'infiltrer dans le milieu de la mode.",
+      "tag": "d300",
+      "column": "1"
+    },
+    {
+      "id": 55,
+      "question": "Quel est le nom du présentateur de radio fictif que Shawn imite avec un accent exagéré dans l'épisode 'The Old and the Restless' ?",
+      "answer": "Sergio",
+      "description": "Dans l'épisode 'The Old and the Restless', Shawn imite 'Sergio', un animateur de radio fictif avec un accent exagéré pour se faufiler dans une maison de retraite.",
+      "tag": "d300",
+      "column": "1"
+    },
+    {
+      "id": 56,
+      "question": "Dans l'épisode 'The Polarizing Express', quelle friandise Gus et Shawn achètent-ils à la boulangerie, qui devient un point de gag récurrent tout au long de l'épisode ?",
+      "answer": "Éclair au chocolat",
+      "description": "Dans 'The Polarizing Express', Shawn et Gus achètent des éclairs au chocolat à la boulangerie, et l'éclair devient un point de gag récurrent tout au long de l'épisode.",
+      "tag": "d300",
+      "column": "1"
     }
   ],
   "tags": [
@@ -381,6 +509,11 @@
       "id": "12",
       "label": "BoJack Horseman",
       "color": "#f5deb3"
+    },
+    {
+      "id": "d300",
+      "label": "Psych",
+      "color": "#caec22"
     }
   ],
   "columns": [
@@ -398,6 +531,13 @@
       "id": "3",
       "label": "Terminé",
       "order": 3
+    }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "username": "y",
+      "password": "y"
     }
   ]
 }
