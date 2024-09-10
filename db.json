@@ -5,7 +5,7 @@
       "answer": "94",
       "description": "Lieu de stationnement à Mos Eisley dans Star Wars: Un nouvel espoir.",
       "tag": "1",
-      "column": "1",
+      "column": "3",
       "id": "1"
     },
     {
@@ -13,7 +13,7 @@
       "answer": "Pouvoir",
       "description": "Thanos obtient la Pierre de Pouvoir de Xandar.",
       "tag": "2",
-      "column": "1",
+      "column": "2",
       "id": "2"
     },
     {
@@ -29,7 +29,7 @@
       "answer": "Eagan",
       "description": "Fondée par Kier Eagan dans Severance.",
       "tag": "4",
-      "column": "1",
+      "column": "2",
       "id": "4"
     },
     {
@@ -45,7 +45,7 @@
       "answer": "Little Green Bag",
       "description": "Chanson iconique de George Baker Selection.",
       "tag": "6",
-      "column": "3",
+      "column": "2",
       "id": "6"
     },
     {
@@ -53,7 +53,7 @@
       "answer": "Tony Blundetto",
       "description": "Tony Soprano tue Tony Blundetto pour éviter une guerre.",
       "tag": "7",
-      "column": "1",
+      "column": "2",
       "id": "7"
     },
     {
@@ -77,7 +77,7 @@
       "answer": "Eagly",
       "description": "Eagly est l'animal de compagnie de Peacemaker.",
       "tag": "10",
-      "column": "1",
+      "column": "3",
       "id": "10"
     },
     {
@@ -101,7 +101,7 @@
       "answer": "Anakin",
       "description": "Anakin Skywalker, qui devient Dark Vador.",
       "tag": "1",
-      "column": "1",
+      "column": "2",
       "id": "13"
     },
     {
@@ -109,7 +109,7 @@
       "answer": "Professor",
       "description": "Connu sous le nom de 'Professor Hulk' dans les comics et les films.",
       "tag": "2",
-      "column": "1",
+      "column": "3",
       "id": "14"
     },
     {
@@ -125,7 +125,7 @@
       "answer": "Break Room",
       "description": "La 'Break Room' est utilisée pour 'réinitialiser' les employés.",
       "tag": "4",
-      "column": "1",
+      "column": "3",
       "id": "16"
     },
     {
@@ -141,7 +141,7 @@
       "answer": "Badass Motherf***er",
       "description": "Son portefeuille est marqué avec ce surnom.",
       "tag": "6",
-      "column": "3",
+      "column": "2",
       "id": "18"
     },
     {
@@ -237,7 +237,7 @@
       "answer": "Kill Bill",
       "description": "Tenue iconique de la mariée dans Kill Bill.",
       "tag": "6",
-      "column": "3",
+      "column": "2",
       "id": "30"
     },
     {
@@ -321,12 +321,12 @@
       "id": "40"
     },
     {
-      "id": "41",
-      "question": "Quel est le nom du personnage principal de la série Psych, qui prétend être médium ?",
+      "question": "HAHA Quel est le nom du personnage principal de la série Psych, qui prétend être médium ?",
       "answer": "Shawn Spencer",
       "description": "Shawn Spencer est le personnage principal, connu pour ses talents d'observation exceptionnels qu'il utilise pour résoudre des enquêtes tout en prétendant être un médium.",
       "tag": "d300",
-      "column": "1"
+      "column": "2",
+      "id": "41"
     },
     {
       "id": "42",
@@ -334,7 +334,7 @@
       "answer": "Gus",
       "description": "Gus, de son vrai nom Burton Guster, est le meilleur ami et partenaire de Shawn. Il est souvent la voix de la raison.",
       "tag": "d300",
-      "column": "1"
+      "column": "2"
     },
     {
       "id": "43",
@@ -361,7 +361,7 @@
       "column": "1"
     },
     {
-      "id": 46,
+      "id": "46",
       "question": "Quel est le nom du restaurant fictif préféré de Shawn et Gus, qui apparaît fréquemment dans la série ?",
       "answer": "Central Coast Pharmaceuticals",
       "description": "Central Coast Pharmaceuticals est le restaurant fictif où Shawn et Gus vont souvent manger et qui devient un lieu emblématique pour leurs discussions et aventures.",
@@ -369,7 +369,7 @@
       "column": "1"
     },
     {
-      "id": 47,
+      "id": "47",
       "question": "Quel est le nom de la mascotte de l'école secondaire que Shawn et Gus fréquentent, que l'on voit dans l'épisode 'Murder?... Anyone?... Anyone?... Bueller?'",
       "answer": "Le Mammouth",
       "description": "Dans l'épisode 'Murder?... Anyone?... Anyone?... Bueller?', le Mammouth est la mascotte de l'école secondaire de Shawn et Gus, apparaissant comme un clin d'œil aux fans de longue date.",
@@ -377,7 +377,7 @@
       "column": "1"
     },
     {
-      "id": 48,
+      "id": "48",
       "question": "Quel est le nom du chat imaginaire de Shawn qu'il mentionne à plusieurs reprises au cours de la série ?",
       "answer": "Mrs. Pickles",
       "description": "Mrs. Pickles est un chat imaginaire que Shawn évoque dans plusieurs épisodes, souvent de manière humoristique, pour tromper les autres personnages.",
@@ -385,7 +385,7 @@
       "column": "1"
     },
     {
-      "id": 49,
+      "id": "49",
       "question": "Quelle boisson exotique que Gus adore est découverte par Shawn dans l'épisode 'Disco Didn't Die. It Was Murdered!' ?",
       "answer": "Lassi",
       "description": "Dans l'épisode 'Disco Didn't Die. It Was Murdered!', Shawn découvre que Gus est obsédé par le Lassi, une boisson indienne à base de yaourt.",
@@ -393,7 +393,7 @@
       "column": "1"
     },
     {
-      "id": 50,
+      "id": "50",
       "question": "Quel est le nom complet de l'alter ego de Gus qu'il utilise dans l'épisode 'American Duos' ?",
       "answer": "Sapphire Birch",
       "description": "Dans l'épisode 'American Duos', Gus utilise l'alter ego 'Sapphire Birch' pour participer à un concours de talents avec Shawn.",
@@ -401,7 +401,7 @@
       "column": "1"
     },
     {
-      "id": 51,
+      "id": "51",
       "question": "Quel objet précis Shawn a-t-il offert à Juliet lors de leur premier Noël ensemble, objet qui est mentionné plus tard comme un souvenir important ?",
       "answer": "Une boule à neige de Vancouver",
       "description": "Shawn offre à Juliet une boule à neige de Vancouver lors de leur premier Noël ensemble. Cet objet est mentionné plus tard comme un souvenir symbolique de leur relation.",
@@ -409,7 +409,7 @@
       "column": "1"
     },
     {
-      "id": 52,
+      "id": "52",
       "question": "Quel est le nom de la société de transport en commun fictive que Gus mentionne comme sa 'boîte de rêve' où il veut travailler ?",
       "answer": "Thunderbird Express",
       "description": "Gus mentionne 'Thunderbird Express' comme étant son employeur de rêve, une société de transport en commun fictive dont il parle avec enthousiasme.",
@@ -417,7 +417,7 @@
       "column": "1"
     },
     {
-      "id": 53,
+      "id": "53",
       "question": "Quel est le nom de l'assistant du shérif fictif que Shawn invente lorsqu'il se fait passer pour un policier dans l'épisode 'Shawn (and Gus) of the Dead' ?",
       "answer": "Chesterfield McMillan",
       "description": "Dans l'épisode 'Shawn (and Gus) of the Dead', Shawn prétend être un policier et invente un assistant du shérif nommé Chesterfield McMillan pour ajouter de la crédibilité à son histoire.",
@@ -425,7 +425,7 @@
       "column": "1"
     },
     {
-      "id": 54,
+      "id": "54",
       "question": "Quelle maladie rare et fictive Shawn prétend-il avoir dans l'épisode 'Black and Tan: A Crime of Fashion' pour infiltrer le monde de la mode ?",
       "answer": "Superficial Glossitis",
       "description": "Dans l'épisode 'Black and Tan: A Crime of Fashion', Shawn prétend souffrir de 'Superficial Glossitis', une maladie inventée, afin de s'infiltrer dans le milieu de la mode.",
@@ -433,7 +433,7 @@
       "column": "1"
     },
     {
-      "id": 55,
+      "id": "55",
       "question": "Quel est le nom du présentateur de radio fictif que Shawn imite avec un accent exagéré dans l'épisode 'The Old and the Restless' ?",
       "answer": "Sergio",
       "description": "Dans l'épisode 'The Old and the Restless', Shawn imite 'Sergio', un animateur de radio fictif avec un accent exagéré pour se faufiler dans une maison de retraite.",
@@ -441,7 +441,7 @@
       "column": "1"
     },
     {
-      "id": 56,
+      "id": "56",
       "question": "Dans l'épisode 'The Polarizing Express', quelle friandise Gus et Shawn achètent-ils à la boulangerie, qui devient un point de gag récurrent tout au long de l'épisode ?",
       "answer": "Éclair au chocolat",
       "description": "Dans 'The Polarizing Express', Shawn et Gus achètent des éclairs au chocolat à la boulangerie, et l'éclair devient un point de gag récurrent tout au long de l'épisode.",
@@ -451,69 +451,88 @@
   ],
   "tags": [
     {
-      "id": "1",
       "label": "Star Wars",
-      "color": "#eee9c8"
+      "color": "#eee9c8",
+      "emoji": "🚀",
+      "id": "1"
     },
     {
-      "id": "2",
       "label": "Marvel",
-      "color": "#afcce4"
+      "color": "#afcce4",
+      "emoji": "🦸",
+      "id": "2"
     },
     {
-      "id": "3",
       "label": "Harry Potter",
-      "color": "#edc8bf"
+      "color": "#edc8bf",
+      "emoji": "🧙‍♂️",
+      "id": "3"
     },
     {
-      "id": "4",
       "label": "Severance",
-      "color": "#e1cde4"
+      "color": "#e1cde4",
+      "emoji": "🕘",
+      "id": "4"
     },
     {
-      "id": "5",
       "label": "Breaking Bad",
-      "color": "#f0e68c"
+      "color": "#f0e68c",
+      "emoji": "🧑‍🔬",
+      "id": "5"
     },
     {
-      "id": "6",
       "label": "Tarantino Films",
-      "color": "#ffcccb"
+      "color": "#ffcccb",
+      "emoji": "👣",
+      "id": "6"
     },
     {
-      "id": "7",
       "label": "The Sopranos",
-      "color": "#90ee90"
+      "color": "#90ee90",
+      "emoji": "🕴️",
+      "id": "7"
     },
     {
-      "id": "8",
       "label": "Mr. Robot",
-      "color": "#add8e6"
+      "color": "#add8e6",
+      "emoji": "🤖",
+      "id": "8"
     },
     {
-      "id": "9",
       "label": "Matrix",
-      "color": "#d3d3d3"
+      "color": "#d3d3d3",
+      "emoji": "🧬",
+      "id": "9"
     },
     {
-      "id": "10",
       "label": "Peacemaker",
-      "color": "#c0c0c0"
+      "color": "#c0c0c0",
+      "emoji": "⛑️",
+      "id": "10"
     },
     {
       "label": "The Office",
       "color": "#c9f5bc",
+      "emoji": "🏤",
       "id": "11"
     },
     {
-      "id": "12",
       "label": "BoJack Horseman",
-      "color": "#f5deb3"
+      "color": "#f5deb3",
+      "emoji": "🐴",
+      "id": "12"
     },
     {
-      "id": "d300",
       "label": "Psych",
-      "color": "#caec22"
+      "color": "#a1cbdd",
+      "emoji": "🍍",
+      "id": "d300"
+    },
+    {
+      "id": "f8fd",
+      "label": "One Piece",
+      "color": "#f86868",
+      "emoji": "🏴‍☠️"
     }
   ],
   "columns": [

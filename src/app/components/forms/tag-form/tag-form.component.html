@@ -12,6 +12,13 @@
       <input type="color" matInput formControlName="color">
     </mat-form-field>
 
+    <mat-form-field appearance="outline" class="form-field">
+      <mat-label>Emoji</mat-label>
+      <input matInput formControlName="emoji" placeholder="Sélectionnez un emoji" readonly>
+    </mat-form-field>
+
+    <emoji-mart title="Choisissez votre emoji…" emoji="point_up" (emojiClick)="onEmojiSelect($event)"></emoji-mart>
+
     <div class="form-actions">
       <button mat-stroked-button color="primary" type="button" (click)="onCancel()">Annuler</button>
       <button mat-raised-button color="accent" type="submit">{{ isEditMode ? 'Mettre à jour' : 'Créer' }}</button>

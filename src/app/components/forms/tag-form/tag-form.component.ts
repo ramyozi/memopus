@@ -10,6 +10,7 @@ import {MatInputModule} from "@angular/material/input";
 import {MatIconModule} from "@angular/material/icon";
 import {NgxMatColorPickerModule } from '@angular-material-components/color-picker';
 import {MatTooltip} from "@angular/material/tooltip";
+import { PickerComponent } from '@ctrl/ngx-emoji-mart';
 
 @Component({
   selector: 'app-tag-form',
@@ -23,7 +24,8 @@ import {MatTooltip} from "@angular/material/tooltip";
     MatIconModule,
     NgxMatColorPickerModule,
     ReactiveFormsModule,
-    MatTooltip
+    MatTooltip,
+    PickerComponent
   ],  templateUrl: './tag-form.component.html',
   styleUrls: ['./tag-form.component.css']
 })
@@ -41,7 +43,8 @@ export class TagFormComponent implements OnInit {
     this.isEditMode = !!this.data.tag;
     this.tagForm = this.fb.group({
       label: [this.data.tag ? this.data.tag.label : '', Validators.required],
-      color: [this.data.tag ? this.data.tag.color : '#ffffff']
+      color: [this.data.tag ? this.data.tag.color : '#ffffff'],
+      emoji: [this.data.tag ? this.data.tag.emoji : '']
     });
   }
 
@@ -50,6 +53,16 @@ export class TagFormComponent implements OnInit {
       this.verifyTagHasCards();
     }
   }
+
+  /**
+   * Emoji selection event handler.
+   * Update the emoji in the form when an emoji is selected.
+   * @param event
+   */
+  onEmojiSelect(event: any): void {
+    this.tagForm.patchValue({ emoji: event.emoji.native });
+  }
+
   onSubmit(): void {
     if (this.tagForm.valid) {
       if (this.isEditMode) {

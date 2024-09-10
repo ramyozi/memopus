@@ -9,3 +9,10 @@ button.selected {
   background-color: #1976d2;
   color: white;
 }
+
+.emoji {
+  margin-right: 8px;
+  font-size: 1.8em;
+  line-height: 1;
+  display: inline-block;
+}

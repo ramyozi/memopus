@@ -8,7 +8,7 @@
             [ngStyle]="getTagStyle(tag)"
             [class.selected]="selectedTags.has(tag.id)"
             (click)="toggleTagSelection(tag.id)">
-      {{ tag.label }}
+      <span *ngIf="tag.emoji" class="emoji">{{ tag.emoji }}</span> {{ tag.label }}
       <button *ngIf="isAdminMode" mat-icon-button color="primary" (click)="openUpdateTagModal(tag); $event.stopPropagation()">
         <mat-icon>settings</mat-icon>
       </button>
