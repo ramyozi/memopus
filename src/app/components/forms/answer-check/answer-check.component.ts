@@ -6,6 +6,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import {MatDivider} from "@angular/material/divider";
+import * as stringSimilarity from 'string-similarity';
 
 @Component({
   selector: 'app-answer-check',
@@ -24,7 +25,7 @@ import {MatDivider} from "@angular/material/divider";
 })
 export class AnswerCheckComponent {
   answerForm: FormGroup;
-  answerComparison: { char: string; correct: boolean }[] = [];
+  answerComparison: { word: string; correct: boolean }[] = [];
   showComparison: boolean = false;
 
   constructor(
@@ -38,19 +39,26 @@ export class AnswerCheckComponent {
   }
 
   /**
-   * Check the proposed answer against the correct answer.
+   * Checks the proposed answer against the correct answer using string similarity.
    */
   checkAnswer(): void {
-    const proposed = this.answerForm.value.proposedAnswer;
-    const answer = this.data.correctAnswer;
+    const proposed = this.answerForm.value.proposedAnswer.trim();
+    const correctAnswer = this.data.correctAnswer.trim();
     this.answerComparison = [];
 
-    for (let i = 0; i < Math.max(proposed.length, answer.length); i++) {
+    const proposedWords = proposed.split(' ');
+    const correctWords = correctAnswer.split(' ');
+
+    // Comparaison
+    proposedWords.forEach((word: string, index: number) => {
+      const match = stringSimilarity.findBestMatch(word, correctWords);
+
+      // Determine if the match is considered correct based on a similarity threshold (>0.7).
       this.answerComparison.push({
-        char: proposed[i] || '_',
-        correct: proposed[i] === answer[i]
+        word: word,
+        correct: match.bestMatch.rating > 0.7
       });
-    }
+    });
 
     this.showComparison = true;
   }
@@ -58,4 +66,5 @@ export class AnswerCheckComponent {
   closeDialog(): void {
     this.dialogRef.close();
   }
+
 }

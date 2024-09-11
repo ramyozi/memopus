@@ -13,19 +13,13 @@
 
   <div *ngIf="showComparison" class="comparison-section">
     <mat-divider></mat-divider>
-    <p><strong>Bonne réponse :</strong></p>
-    <div class="answer-display">
-      <span *ngFor="let char of answerComparison"
-            [ngStyle]="{'background-color': char.correct ? 'lightgreen' : 'red'}">
-        {{ char.correct ? char.char : data.correctAnswer[answerComparison.indexOf(char)] }}
-      </span>
-    </div>
+    <p><strong>Bonne réponse :</strong> {{ data.correctAnswer }}</p>
 
     <p><strong>Votre réponse :</strong></p>
     <div class="answer-display">
-      <span *ngFor="let char of answerComparison"
-            [ngStyle]="{'background-color': char.correct ? 'lightgreen' : 'red'}">
-        {{ char.char }}
+      <span *ngFor="let word of answerComparison"
+            [ngStyle]="{'background-color': word.correct ? 'lightgreen' : 'red'}">
+        {{ word.word }}
       </span>
     </div>
 
