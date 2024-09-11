@@ -140,7 +140,6 @@ export class TagsComponent implements OnInit {
    */
   getTagStyle(tag: Tag): any {
     const isSelected = this.selectedTags.has(tag.id);
-    console.log('tag + color', tag.id, tag.color);
     return {
       'background-color': isSelected ? LightenDarkenColor(tag.color || 'ffffff', -30) : tag.color,
       'color': isSelected ? '#000000' : '#000000',
