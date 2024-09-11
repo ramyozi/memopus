@@ -63,6 +63,9 @@ export class AnswerCheckComponent {
     this.showComparison = true;
   }
 
+  /**
+   * Closes the dialog.
+   */
   closeDialog(): void {
     this.dialogRef.close();
   }

@@ -55,16 +55,25 @@ export class CardFormComponent implements OnInit {
     this.tags = [];
   }
 
+  /**
+   * Load tags on load of the component.
+   */
   ngOnInit(): void {
     this.loadTags();
   }
 
+  /**
+   * Load tags for the selector
+   */
   loadTags(): void {
     this.tagService.getTags().subscribe(tags => {
       this.tags = tags;
     });
   }
 
+  /**
+   * Submit the form to create or update a card.
+   */
   onSubmit(): void {
     console.log(this.cardForm.value);
     if (this.cardForm.valid) {
@@ -92,6 +101,9 @@ export class CardFormComponent implements OnInit {
     }
   }
 
+  /**
+   * Close the dialog.
+   */
   onCancel(): void {
     this.dialogRef.close();
   }

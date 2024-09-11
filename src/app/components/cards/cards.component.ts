@@ -42,11 +42,19 @@ export class CardsComponent implements OnInit, OnChanges {
 
   constructor(private dialog: MatDialog, private adminService: AdminService) {}
 
+  /**
+   * Initializes the component and subscribes to admin mode changes.
+   */
   ngOnInit(): void {
     this.adminService.adminMode$.subscribe((isAdmin) => {
       this.isAdminMode = isAdmin;
     });
   }
+
+  /**
+   * Detects changes in input properties and resets the visibility of input fields for each card.
+   * @param {SimpleChanges} changes - Object containing the changes of input properties.
+   */
   ngOnChanges(changes: SimpleChanges): void {
     if (changes['cards']) {
       this.cards.forEach(card => this.showInput[card.id] = false);
@@ -54,9 +62,8 @@ export class CardsComponent implements OnInit, OnChanges {
   }
 
   /**
-   * Check if the proposed answer is correct.
+   * Opens a check answer modal dialog of a card.
    * @param {Card} card - The card for which to check the proposed answer.
-   * @returns {boolean} - True if the proposed answer is correct, false otherwise
    */
   openAnswerModal(card: Card): void {
     const dialogRef = this.dialog.open(AnswerCheckComponent, {

@@ -48,6 +48,9 @@ export class TagFormComponent implements OnInit {
     });
   }
 
+  /**
+   * Initializes the component and verifies if the tag has associated cards
+    */
   ngOnInit(): void {
     if (this.isEditMode && this.data.tag) {
       this.verifyTagHasCards();
@@ -63,6 +66,9 @@ export class TagFormComponent implements OnInit {
     this.tagForm.patchValue({ emoji: event.emoji.native });
   }
 
+  /**
+   * Handles form submission to update or create a tag.
+   */
   onSubmit(): void {
     if (this.tagForm.valid) {
       if (this.isEditMode) {
@@ -89,7 +95,7 @@ export class TagFormComponent implements OnInit {
   }
 
   /**
-   * Delete the tag if it has no associated cards.
+   * Delete the tag with check if it has no associated cards.
    */
   deleteTag(): void {
     if (this.hasCards) {
@@ -104,7 +110,9 @@ export class TagFormComponent implements OnInit {
     }
   }
 
-
+  /**
+   * Close the dialog.
+   */
   onCancel(): void {
     this.dialogRef.close();
   }

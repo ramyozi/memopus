@@ -1,3 +1,9 @@
+/**
+ * Lighten or darken a color by a specified amount.
+ * @param col - The color to lighten or darken.
+ * @param amt - The amount to lighten or darken the color.
+ * @returns {string} - The lightened or darkened color.
+ */
 export function LightenDarkenColor(col: string, amt: number): string {
   let usePound = false;
   if ( col[0] == "#" ) {

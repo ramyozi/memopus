@@ -32,6 +32,10 @@ export class TagsComponent implements OnInit {
     private adminService: AdminService
   ) {}
 
+  /**
+   * Initializes the component and fetches tags.
+   * Subscribes to admin mode changes. (display gears icon next to tags or not)
+   */
   ngOnInit(): void {
     this.fetchTags();
     this.adminService.adminMode$.subscribe((isAdmin) => {
@@ -138,7 +142,7 @@ export class TagsComponent implements OnInit {
     const isSelected = this.selectedTags.has(tag.id);
     console.log('tag + color', tag.id, tag.color);
     return {
-      'background-color': isSelected ? this.darkenColor(tag.color || 'ffffff', 20) : tag.color,
+      'background-color': isSelected ? LightenDarkenColor(tag.color || 'ffffff', -30) : tag.color,
       'color': isSelected ? '#000000' : '#000000',
       'border': isSelected ? '2px solid #ffffff' : '1px solid #cccccc',
       'box-shadow': isSelected ? '0 4px 8px rgba(0, 0, 0, 0.2)' : 'none',
@@ -148,17 +152,5 @@ export class TagsComponent implements OnInit {
       'border-radius': isSelected ? '12px' : '8px',
       'transition': 'all 0.3s ease'
     };
-  }
-
-
-  /**
-   * Darken a color by a specified amount.
-   * @param {string} color - The color to darken.
-   * @param {number} amount - The amount to darken the color by.
-   *
-   * @returns {string} - The darkened color.
-   */
-  darkenColor(color: string, amount: number): string {
-    return LightenDarkenColor(color, -amount);
   }
 }

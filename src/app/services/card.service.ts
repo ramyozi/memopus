@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Card } from '../models/card.model';
-import { Tag } from '../models/tag.model';
 import {Column} from "../models/column.model";
 
 @Injectable({
@@ -10,7 +9,6 @@ import {Column} from "../models/column.model";
 })
 export class CardService {
   private apiUrl = 'http://localhost:3000/cards';
-  private tagsUrl = 'http://localhost:3000/tags';
   private columnsUrl = 'http://localhost:3000/columns';
 
   constructor(private http: HttpClient) {}
