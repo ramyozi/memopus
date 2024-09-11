@@ -539,17 +539,53 @@
     {
       "id": "1",
       "label": "A regarder",
-      "order": 1
+      "order": 0
     },
     {
       "id": "2",
       "label": "En cours",
-      "order": 2
+      "order": 1
     },
     {
       "id": "3",
       "label": "Terminé",
+      "order": 2
+    },
+    {
+      "id": "1359",
+      "label": "toto",
+      "customPosition": false,
       "order": 3
+    },
+    {
+      "id": "47cb",
+      "label": "test",
+      "customPosition": true,
+      "order": 4
+    },
+    {
+      "id": "47c0",
+      "label": "deuxieme",
+      "customPosition": true,
+      "order": 1
+    },
+    {
+      "id": "2eab",
+      "label": "deuxieme",
+      "customPosition": true,
+      "order": 1
+    },
+    {
+      "id": "0e2b",
+      "label": "deuxieme",
+      "customPosition": true,
+      "order": 1
+    },
+    {
+      "id": "c847",
+      "label": "deuxieme",
+      "customPosition": true,
+      "order": 1
     }
   ],
   "users": [

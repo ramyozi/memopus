@@ -5,19 +5,19 @@ import { MatButtonModule } from '@angular/material/button';
 import { CardService } from '../../services/card.service';
 import { Card } from '../../models/card.model';
 import { Column } from '../../models/column.model';
-import {ColumnService} from "../../services/column.service";
-import {MatIcon} from "@angular/material/icon";
-import {CardFormComponent} from "../forms/card-form/card-form.component";
-import {MatDialog} from "@angular/material/dialog";
-import {CardsComponent} from "../cards/cards.component";
-import {AdminService} from "../../services/admin.service";
-import {ColumnFormComponent} from "../forms/column-form/column-form.component";
-import {Tag} from "../../models/tag.model";
+import { ColumnService } from '../../services/column.service';
+import { MatIconModule } from '@angular/material/icon';
+import { CardFormComponent } from '../forms/card-form/card-form.component';
+import { MatDialog } from '@angular/material/dialog';
+import { CardsComponent } from '../cards/cards.component';
+import { AdminService } from '../../services/admin.service';
+import { ColumnFormComponent } from '../forms/column-form/column-form.component';
+import { Tag } from '../../models/tag.model';
 
 @Component({
   selector: 'app-columns',
   standalone: true,
-  imports: [CommonModule, MatCardModule, MatButtonModule, MatIcon, CardsComponent],
+  imports: [CommonModule, MatCardModule, MatButtonModule, MatIconModule, CardsComponent],
   templateUrl: './columns.component.html',
   styleUrls: ['./columns.component.css']
 })
@@ -29,11 +29,12 @@ export class ColumnsComponent implements OnInit {
   error: string | null = null;
   isAdminMode: boolean = false;
 
-  constructor(private cardService: CardService,
-              private columnService: ColumnService,
-              private dialog: MatDialog,
-              private adminService: AdminService
-) {}
+  constructor(
+    private cardService: CardService,
+    private columnService: ColumnService,
+    private dialog: MatDialog,
+    private adminService: AdminService
+  ) {}
 
   ngOnInit(): void {
     this.fetchCards();
@@ -42,8 +43,9 @@ export class ColumnsComponent implements OnInit {
       this.isAdminMode = isAdmin;
     });
   }
+
   /**
-   * Fetch cards from the CardService
+   * Fetch cards from the CardService.
    */
   fetchCards(): void {
     this.cardService.getCards().subscribe(
@@ -59,12 +61,12 @@ export class ColumnsComponent implements OnInit {
   }
 
   /**
-   * Fetch columns from the CardService
+   * Fetch columns from the ColumnService.
    */
   fetchColumns(): void {
     this.columnService.getColumns().subscribe(
       (data: Column[]) => {
-        this.columns = data;
+        this.columns = data.sort((a, b) => a.order - b.order);
         this.error = this.columns.length === 0 ? 'Aucune colonne disponible.' : null;
       },
       (error) => {
@@ -75,9 +77,9 @@ export class ColumnsComponent implements OnInit {
   }
 
   /**
-   * Move a card to a different column
-   * @param {Card} card - The card to move
-   * @param {number} columnId - The ID of the column to move the card to
+   * Move a card to a different column.
+   * @param {Card} card - The card to move.
+   * @param {number} columnId - The ID of the column to move the card to.
    */
   moveCard(card: Card, columnId: number): void {
     card.column = columnId;
@@ -95,18 +97,18 @@ export class ColumnsComponent implements OnInit {
   }
 
   /**
-   * Get cards filtered by column ID
-   * @param {number} columnId - The column ID to filter cards by
-   * @returns {Card[]} Array of cards for the specified column
+   * Get cards filtered by column ID.
+   * @param {number} columnId - The column ID to filter cards by.
+   * @returns {Card[]} Array of cards for the specified column.
    */
   getCardsForColumn(columnId: number): Card[] {
     return this.cards.filter(card => card.column === columnId && (this.selectedTags.length === 0 || this.selectedTags.includes(card.tag)));
   }
 
   /**
-   * Handle drag start event
-   * @param {DragEvent} event - The drag event
-   * @param {Card} card - The card being dragged
+   * Handle drag start event.
+   * @param {DragEvent} event - The drag event.
+   * @param {Card} card - The card being dragged.
    */
   onDragStart(event: DragEvent, card: Card): void {
     event.dataTransfer?.setData('text/plain', card.id.toString());
@@ -114,8 +116,8 @@ export class ColumnsComponent implements OnInit {
   }
 
   /**
-   * Handle drag over event
-   * @param {DragEvent} event - The drag event
+   * Handle drag over event.
+   * @param {DragEvent} event - The drag event.
    */
   onDragOver(event: DragEvent): void {
     event.preventDefault();
@@ -123,9 +125,9 @@ export class ColumnsComponent implements OnInit {
   }
 
   /**
-   * Handle drop event
-   * @param {DragEvent} event - The drag event
-   * @param {number} columnId - The ID of the column where the card is dropped
+   * Handle drop event.
+   * @param {DragEvent} event - The drag event.
+   * @param {number} columnId - The ID of the column where the card is dropped.
    */
   onDrop(event: DragEvent, columnId: number): void {
     event.preventDefault();
@@ -150,7 +152,7 @@ export class ColumnsComponent implements OnInit {
   }
 
   /**
-   * Open the create card modal
+   * Open the create card modal.
    */
   openCreateCardModal(columnId: number): void {
     const dialogRef = this.dialog.open(CardFormComponent, {
@@ -159,7 +161,8 @@ export class ColumnsComponent implements OnInit {
         card: null,
         selectedTagId: this.selectedTags.length === 1 ? this.selectedTags[0] : null,
         columnId: columnId
-      }    });
+      }
+    });
 
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
@@ -169,7 +172,7 @@ export class ColumnsComponent implements OnInit {
   }
 
   /**
-   * Get the number of cards for a column
+   * Get the number of cards for a column.
    * @param columnId
    * @returns {number}
    */
@@ -184,7 +187,24 @@ export class ColumnsComponent implements OnInit {
   openUpdateColumnModal(column: Column): void {
     const dialogRef = this.dialog.open(ColumnFormComponent, {
       width: '400px',
-      data: { column }
+      data: { column, columns: this.columns }
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        this.fetchColumns();
+      }
+    });
+  }
+
+  /**
+   * Opens the create column modal.
+   */
+  openCreateColumnModal(): void {
+    const dialogRef = this.dialog.open(ColumnFormComponent, {
+      width: '800px',
+      height: '400px',
+      data: { column: null, columns: this.columns }
     });
 
     dialogRef.afterClosed().subscribe(result => {

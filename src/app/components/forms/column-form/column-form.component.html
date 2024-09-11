@@ -1,12 +1,40 @@
-<h2>{{ isEditMode ? 'Modifier la colonne' : 'Créer une nouvelle colonne' }}</h2>
-<form [formGroup]="columnForm" (ngSubmit)="onSubmit()">
-  <mat-form-field appearance="fill">
-    <mat-label>Label</mat-label>
-    <input matInput formControlName="label" placeholder="Nom de la colonne">
-    <mat-error *ngIf="columnForm.get('label')?.hasError('required')">Le label est requis</mat-error>
-  </mat-form-field>
-  <div class="form-actions">
-    <button mat-button type="button" (click)="onCancel()">Annuler</button>
-    <button mat-raised-button color="primary" type="submit">{{ isEditMode ? 'Mettre à jour' : 'Créer' }}</button>
-  </div>
-</form>
+<div class="modal-content">
+  <h2>{{ isEditMode ? 'Modifier la colonne' : 'Créer une nouvelle colonne' }}</h2>
+
+  <form [formGroup]="columnForm" (ngSubmit)="onSubmit()">
+    <mat-form-field appearance="fill">
+      <mat-label>Label</mat-label>
+      <input matInput formControlName="label" placeholder="Nom de la colonne">
+      <mat-error *ngIf="columnForm.get('label')?.hasError('required')">Le label est requis</mat-error>
+    </mat-form-field>
+
+    <mat-checkbox formControlName="customPosition" (change)="customPositioningEnabled = !customPositioningEnabled">
+      Personnaliser la position de la colonne
+    </mat-checkbox>
+
+    <div *ngIf="customPositioningEnabled" class="position-controls">
+      <h3>Position de la colonne</h3>
+      <div class="columns-list">
+        <div class="column-item" *ngFor="let column of columns; let i = index">
+          <mat-card [ngClass]="{'highlight': i === newColumnPosition}">
+            {{ column.label }}
+          </mat-card>
+        </div>
+      </div>
+
+      <div class="move-buttons">
+        <button mat-icon-button color="primary" (click)="moveUp()" [disabled]="newColumnPosition === 0">
+          <mat-icon>arrow_left</mat-icon>
+        </button>
+        <button mat-icon-button color="primary" (click)="moveDown()" [disabled]="newColumnPosition === columns.length - 1">
+          <mat-icon>arrow_right</mat-icon>
+        </button>
+      </div>
+    </div>
+
+    <div class="form-actions">
+      <button mat-button type="button" (click)="onCancel()">Annuler</button>
+      <button mat-raised-button color="primary" type="submit">{{ isEditMode ? 'Mettre à jour' : 'Créer' }}</button>
+    </div>
+  </form>
+</div>
