@@ -109,7 +109,10 @@ Une fois l'application lancée, ouvrez votre navigateur et accédez à http://lo
 - **Utilisation de `ngx-emoji-mart`** pour la sélection d'emoji dans la gestion des tags.
 - **Gestion de la couleur des tags** avec un sélecteur de couleur Angular Material.
 - **Déplacement de cartes** avec une gestion dynamique de l'ordre et de la position.
-- **Comparaison de réponses** avec la bibliothèque string-similarity.
+- **Comparaison de réponses** avec la bibliothèque `string-similarity`.
+
+### Fonctionnalités à venir
+Pour les futures versions de l'application, l'ajout de colonnes et la sélection de l'ordre des colonnes seront complétés. Ces fonctionnalités sont actuellement en cours de développement dans la branche `feature/add-column-management-and-manage-order`. Cette branche est dédiée à l'amélioration de l'interface de gestion des colonnes pour permettre un contrôle plus précis de l'ordre d'affichage.
 
 ### Organisation et Méthodologie
 - **Versionnement avec Git** et **README.md** détaillé pour faciliter l'installation et l'utilisation de l'application.
