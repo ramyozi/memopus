@@ -1,15 +1,16 @@
 <div *ngIf="cards.length === 0" class="error-message">Pas de cartes</div>
-<div class="card-container row" [style.grid-template-columns]="'repeat(' + columns + ', 1fr)'">
-  <div *ngFor="let card of cards" class="col-md-4 mb-4">
+
+<div class="card-container" [style.grid-template-columns]="'repeat(' + columns + ', 1fr)'">
+  <div *ngFor="let card of cards">
     <mat-card class="card" [ngStyle]="{ 'background-color': getTagColor(card.tag) }" [attr.draggable]="true" (dragstart)="onDragStart($event, card)">
+
       <div class="card-header">
-        <mat-card-title class="card-title">
-          {{ card.question }}
-        </mat-card-title>
+        <mat-card-title class="card-title">{{ card.question }}</mat-card-title>
         <button mat-icon-button class="drag-handle" (mousedown)="$event.stopPropagation()" matTooltip="Déplacer la carte">
           <mat-icon>drag_indicator</mat-icon>
         </button>
       </div>
+
       <mat-card-content>
         <div class="card-actions">
           <button mat-stroked-button color="primary" (click)="openAnswerModal(card)">Proposer une réponse</button>
@@ -18,6 +19,7 @@
           </button>
         </div>
       </mat-card-content>
+
     </mat-card>
   </div>
 </div>

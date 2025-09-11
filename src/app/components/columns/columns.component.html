@@ -1,6 +1,11 @@
 <div *ngIf="error" class="error-message">{{ error }}</div>
+
 <div class="columns-container">
-  <div *ngFor="let column of columns" class="column" (dragover)="onDragOver($event)" (drop)="onDrop($event, column.id)">
+  <div *ngFor="let column of columns"
+       class="column"
+       (dragover)="onDragOver($event)"
+       (drop)="onDrop($event, column.id)">
+
     <div class="column-header">
       <h2 class="column-title">
         {{ column.label }} ({{ getCardCountForColumn(column.id) }})
@@ -14,8 +19,13 @@
         </button>
       </div>
     </div>
+
     <div class="cards-container">
-      <app-cards [cards]="getCardsForColumn(column.id)" [tags]="tags" [columns]="1" (cardUpdated)="fetchCards()"></app-cards>
+      <app-cards [cards]="getCardsForColumn(column.id)"
+                 [tags]="tags"
+                 [columns]="1"
+                 (cardUpdated)="fetchCards()">
+      </app-cards>
       <ng-template #noCards>
         <p>Pas de cartes</p>
       </ng-template>
