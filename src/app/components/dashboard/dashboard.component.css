@@ -1,31 +1,49 @@
 .dashboard-container {
   padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  font-family: 'Comic Neue', cursive, 'Roboto', sans-serif;
+  text-align: center;
+}
+
+.dashboard-container h1 {
+  font-size: 2em;
+  font-weight: bold;
+  color: #ff6f61;
+  margin-bottom: 30px;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
 }
 
 .filters-container {
   display: flex;
-  justify-content: center; /* Center the filters */
-  margin-bottom: 20px; /* Add space below filters */
+  justify-content: center;
+  margin-bottom: 25px;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
 .columns-container {
   display: flex;
-  justify-content: center; /* Center the columns as a group */
-  align-items: flex-start; /* Align columns to the top */
-  margin-top: 20px;
-  gap: 20px; /* Space between columns */
-  padding: 0 20px; /* Optional: Space outside left and right */
-  max-width: 100%; /* Prevent overflowing */
-  flex-wrap: wrap; /* Allow columns to wrap to the next line if needed */
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 0 10px;
+  flex-wrap: wrap;
 }
 
 .column {
-  flex: 1; /* Make columns flexible */
-  min-width: 250px; /* Minimum width for columns */
-  max-width: 300px; /* Maximum width for columns */
-  border: 1px solid #ccc;
-  padding: 10px;
-  border-radius: 5px;
-  background-color: #f9f9f9;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for visual separation */
+  flex: 1;
+  min-width: 250px;
+  max-width: 320px;
+  border-radius: 16px;
+  padding: 12px;
+  background-color: #fff3e0;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
 }
+
+.column:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+}
+

@@ -1,4 +1,16 @@
-<header>
-  <!-- Existing header content -->
-  <button mat-raised-button color="primary" (click)="toggleAdminMode()">Activer le mode administration</button>
+<header class="app-header" *ngIf="isAuthenticated()">
+  <div class="header-left">
+    <img src="assets/logo.png" alt="Memopus Logo" class="app-logo"/>
+  </div>
+  <div class="header-right">
+    <button mat-stroked-button color="primary" (click)="toggleAdminMode()" class="admin-toggle-button">
+      <mat-icon>{{ isAdminMode ? 'toggle_on' : 'toggle_off' }}</mat-icon>
+      {{ isAdminMode ? 'Mode Admin' : 'Activer Admin' }}
+    </button>
+
+    <button mat-stroked-button color="warn" (click)="logout()" class="logout-button">
+      <mat-icon>exit_to_app</mat-icon>
+      Déconnexion
+    </button>
+  </div>
 </header>
