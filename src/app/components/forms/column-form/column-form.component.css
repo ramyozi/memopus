@@ -1,0 +1,44 @@
+.column-form-container {
+  max-width: 500px;
+  margin: 30px auto;
+  padding: 25px 30px;
+  background-color: #fff8e1;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  font-family: 'Comic Neue', cursive, 'Roboto', sans-serif;
+}
+
+.form-title {
+  text-align: center;
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 25px;
+  color: #ff6f61;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.15);
+}
+
+mat-form-field {
+  width: 100%;
+  border-radius: 12px;
+}
+
+button[mat-button],
+button[mat-raised-button] {
+  min-width: 100px;
+  border-radius: 25px;
+  font-weight: bold;
+  text-transform: none;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+button[mat-button]:hover,
+button[mat-raised-button]:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.form-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}

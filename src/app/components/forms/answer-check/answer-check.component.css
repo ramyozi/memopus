@@ -3,13 +3,56 @@
   margin-bottom: 15px;
 }
 
+mat-form-field {
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+mat-form-field textarea {
+  font-family: 'Comic Neue', cursive, 'Roboto', sans-serif;
+  font-size: 1em;
+}
+
+button.mat-raised-button {
+  border-radius: 25px;
+  font-weight: bold;
+  text-transform: none;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+button.mat-raised-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+
 .comparison-section {
-  margin-top: 20px;
+  margin-top: 25px;
+  padding: 15px;
+  border-radius: 16px;
+  background-color: #fff3e0;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
 .answer-display {
   display: flex;
   flex-wrap: wrap;
-  gap: 5px;
+  gap: 8px;
   margin-bottom: 10px;
+}
+
+.answer-display span {
+  padding: 4px 8px;
+  border-radius: 8px;
+  color: #000;
+  font-weight: 600;
+}
+
+mat-divider {
+  margin: 15px 0;
+}
+
+h2, h3 {
+  font-family: 'Comic Neue', cursive, 'Roboto', sans-serif;
+  color: #ff6f61;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
 }

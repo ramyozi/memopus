@@ -8,17 +8,21 @@
       <mat-label>Réponse</mat-label>
       <textarea matInput formControlName="proposedAnswer" placeholder="Entrez votre réponse"></textarea>
     </mat-form-field>
-    <button mat-raised-button color="warn" type="submit" class="full-width">Comparer</button>
+
+    <button mat-raised-button color="primary" type="submit" class="full-width">
+      Comparer
+    </button>
   </form>
 
   <div *ngIf="showComparison" class="comparison-section">
     <mat-divider></mat-divider>
+
     <p><strong>Bonne réponse :</strong> {{ data.correctAnswer }}</p>
 
     <p><strong>Votre réponse :</strong></p>
     <div class="answer-display">
       <span *ngFor="let word of answerComparison"
-            [ngStyle]="{'background-color': word.correct ? 'lightgreen' : 'red'}">
+            [ngStyle]="{'background-color': word.correct ? '#b9f6ca' : '#ff8a80'}">
         {{ word.word }}
       </span>
     </div>
@@ -29,5 +33,5 @@
 </div>
 
 <div mat-dialog-actions align="end">
-  <button mat-raised-button color="primary" (click)="closeDialog()">Fermer</button>
+  <button mat-raised-button color="warn" (click)="closeDialog()">Fermer</button>
 </div>

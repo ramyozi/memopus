@@ -15,7 +15,7 @@ import {MatInput} from "@angular/material/input";
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-  login: string = '';
+  username: string = '';
   password: string = '';
   error: string = '';
 
@@ -25,11 +25,11 @@ export class LoginComponent {
    * Attempts to log in the user.
    */
   onLogin(): void {
-    if (this.login.trim() === '' || this.password.trim() === '') {
+    if (this.username.trim() === '' || this.password.trim() === '') {
       return;
     }
 
-    this.authService.login(this.login, this.password).subscribe((isAuthenticated) => {
+    this.authService.login(this.username, this.password).subscribe((isAuthenticated) => {
       if (isAuthenticated) {
         this.router.navigate(['/dashboard']);
       } else {

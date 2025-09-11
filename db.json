@@ -133,7 +133,7 @@
       "answer": "Car Wash",
       "description": "Walter utilise son lave-auto comme blanchisserie d'argent.",
       "tag": "5",
-      "column": "1",
+      "column": "2",
       "id": "17"
     },
     {
@@ -149,7 +149,7 @@
       "answer": "Family First",
       "description": "Thème central de la série Les Sopranos.",
       "tag": "7",
-      "column": "1",
+      "column": "2",
       "id": "19"
     },
     {
@@ -213,7 +213,7 @@
       "answer": "Pattenrond",
       "description": "Pattenrond est le chat croisé de Hermione.",
       "tag": "3",
-      "column": "3",
+      "column": "2",
       "id": "27"
     },
     {
@@ -245,7 +245,7 @@
       "answer": "Melfi",
       "description": "Dr. Jennifer Melfi, son psychiatre tout au long de la série.",
       "tag": "7",
-      "column": "2",
+      "column": "1",
       "id": "31"
     },
     {
@@ -309,7 +309,7 @@
       "answer": "Avada",
       "description": "La malédiction impardonnable 'Avada Kedavra'.",
       "tag": "3",
-      "column": "3",
+      "column": "1",
       "id": "39"
     },
     {
@@ -317,7 +317,7 @@
       "answer": "Gotti",
       "description": "Référence au parrain John Gotti.",
       "tag": "7",
-      "column": "2",
+      "column": "3",
       "id": "40"
     },
     {
@@ -445,6 +445,14 @@
       "question": "Dans l'épisode 'The Polarizing Express', quelle friandise Gus et Shawn achètent-ils à la boulangerie, qui devient un point de gag récurrent tout au long de l'épisode ?",
       "answer": "Éclair au chocolat",
       "description": "Dans 'The Polarizing Express', Shawn et Gus achètent des éclairs au chocolat à la boulangerie, et l'éclair devient un point de gag récurrent tout au long de l'épisode.",
+      "tag": "d300",
+      "column": "1"
+    },
+    {
+      "id": "95dd",
+      "question": "Dans quelle ville se déroule la série ",
+      "answer": "Santa Barbara",
+      "description": "n/a",
       "tag": "d300",
       "column": "1"
     }

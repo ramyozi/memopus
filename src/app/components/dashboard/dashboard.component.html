@@ -1,8 +1,13 @@
 <div class="dashboard-container">
-  <h1>Testez vos connaissance sur les séries TV et les films</h1>
+  <h1>Testez vos connaissances sur les séries TV et les films</h1>
+
   <div class="filters-container">
-    <app-tags (tagSelectionChanged)="onTagSelectionChanged($event)" (tagsFetched)="onTagsFetched($event)"></app-tags>
+    <app-tags
+      (tagSelectionChanged)="onTagSelectionChanged($event)"
+      (tagsFetched)="onTagsFetched($event)">
+    </app-tags>
   </div>
+
   <div class="columns-container">
     <app-columns [selectedTags]="selectedTags" [tags]="tags"></app-columns>
   </div>
