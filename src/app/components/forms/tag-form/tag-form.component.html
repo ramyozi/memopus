@@ -1,23 +1,21 @@
 <div class="tag-form-container">
   <h2 class="form-title">{{ isEditMode ? 'Modifier le tag' : 'Créer un nouveau tag' }}</h2>
   <form [formGroup]="tagForm" (ngSubmit)="onSubmit()" class="tag-form">
-    <mat-form-field appearance="outline" class="form-field">
+    <mat-form-field appearance="outline">
       <mat-label>Label</mat-label>
-      <input matInput formControlName="label" placeholder="Entrez le label du tag">
+      <input matInput formControlName="label" placeholder="Nom du tag">
       <mat-error *ngIf="tagForm.get('label')?.hasError('required')">Le label est requis</mat-error>
     </mat-form-field>
 
-    <mat-form-field appearance="outline" class="form-field">
-      <mat-label>Couleur</mat-label>
-      <input type="color" matInput formControlName="color">
-    </mat-form-field>
-
-    <mat-form-field appearance="outline" class="form-field">
-      <mat-label>Emoji</mat-label>
-      <input matInput formControlName="emoji" placeholder="Sélectionnez un emoji" readonly>
-    </mat-form-field>
-
-    <emoji-mart title="Choisissez votre emoji…" emoji="point_up" (emojiClick)="onEmojiSelect($event)"></emoji-mart>
+    <div class="color-emoji-section">
+      <mat-form-field appearance="outline" class="form-field">
+        <mat-label>Couleur</mat-label>
+        <input matInput [ngxMatColorPicker]="picker" formControlName="color">
+        <ngx-mat-color-toggle [for]="picker"></ngx-mat-color-toggle>
+        <ngx-mat-color-picker #picker></ngx-mat-color-picker>
+      </mat-form-field>
+      <emoji-picker #emojiPicker style="width: 100%; max-height: 300px;"></emoji-picker>
+    </div>
 
     <div class="form-actions">
       <button mat-stroked-button color="primary" type="button" (click)="onCancel()">Annuler</button>

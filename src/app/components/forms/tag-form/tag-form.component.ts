@@ -1,16 +1,16 @@
-import { Component, Inject, OnInit } from '@angular/core';
+import {AfterViewInit, Component, CUSTOM_ELEMENTS_SCHEMA, ElementRef, Inject, OnInit, ViewChild} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatDialogRef, MAT_DIALOG_DATA, MatDialogModule } from '@angular/material/dialog';
-import {FormBuilder, ReactiveFormsModule, FormGroup, Validators, FormsModule} from '@angular/forms';
+import { FormBuilder, ReactiveFormsModule, FormGroup, Validators, FormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
-import {Tag} from "../../../models/tag.model";
-import {MatFormFieldModule} from "@angular/material/form-field";
-import {TagService} from "../../../services/tag.service";
-import {MatInputModule} from "@angular/material/input";
-import {MatIconModule} from "@angular/material/icon";
-import {NgxMatColorPickerModule } from '@angular-material-components/color-picker';
-import {MatTooltip} from "@angular/material/tooltip";
-import { PickerComponent } from '@ctrl/ngx-emoji-mart';
+import { Tag } from '../../../models/tag.model';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { TagService } from '../../../services/tag.service';
+import { MatInputModule } from '@angular/material/input';
+import { MatIconModule } from '@angular/material/icon';
+import { NgxMatColorPickerModule } from '@angular-material-components/color-picker';
+import { MatTooltip } from '@angular/material/tooltip';
+import 'emoji-picker-element';
 
 @Component({
   selector: 'app-tag-form',
@@ -18,21 +18,25 @@ import { PickerComponent } from '@ctrl/ngx-emoji-mart';
   imports: [
     CommonModule,
     FormsModule,
+    ReactiveFormsModule,
     MatButtonModule,
     MatFormFieldModule,
     MatInputModule,
     MatIconModule,
     NgxMatColorPickerModule,
-    ReactiveFormsModule,
     MatTooltip,
-    PickerComponent
-  ],  templateUrl: './tag-form.component.html',
-  styleUrls: ['./tag-form.component.css']
+    MatDialogModule,
+  ],
+  templateUrl: './tag-form.component.html',
+  styleUrls: ['./tag-form.component.css'],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
-export class TagFormComponent implements OnInit {
+export class TagFormComponent implements OnInit, AfterViewInit {
   tagForm: FormGroup;
   isEditMode: boolean;
   hasCards: boolean = false;
+
+  @ViewChild('emojiPicker', { static: false }) emojiPickerRef!: ElementRef;
 
   constructor(
     private fb: FormBuilder,
@@ -48,31 +52,26 @@ export class TagFormComponent implements OnInit {
     });
   }
 
-  /**
-   * Initializes the component and verifies if the tag has associated cards
-    */
   ngOnInit(): void {
     if (this.isEditMode && this.data.tag) {
       this.verifyTagHasCards();
     }
   }
 
-  /**
-   * Emoji selection event handler.
-   * Update the emoji in the form when an emoji is selected.
-   * @param event
-   */
-  onEmojiSelect(event: any): void {
-    this.tagForm.patchValue({ emoji: event.emoji.native });
+  ngAfterViewInit(): void {
+    const pickerEl = this.emojiPickerRef.nativeElement as HTMLElement;
+    pickerEl.addEventListener('emoji-click', (event: any) => {
+      this.onEmojiSelect(event.detail);
+    });
   }
 
-  /**
-   * Handles form submission to update or create a tag.
-   */
+  onEmojiSelect(detail: any): void {
+    this.tagForm.patchValue({ emoji: detail.unicode });
+  }
+
   onSubmit(): void {
     if (this.tagForm.valid) {
       if (this.isEditMode) {
-        // Update existing tag
         this.tagService.updateTag(this.data.tag!.id, this.tagForm.value).subscribe(() => {
           this.dialogRef.close(true);
         });
@@ -84,19 +83,12 @@ export class TagFormComponent implements OnInit {
     }
   }
 
-
-  /**
-   * Verify if the tag has associated cards.
-   */
   verifyTagHasCards(): void {
     this.tagService.hasAssociatedCards(this.data.tag!.id).subscribe((hasCards) => {
       this.hasCards = hasCards;
     });
   }
 
-  /**
-   * Delete the tag with check if it has no associated cards.
-   */
   deleteTag(): void {
     if (this.hasCards) {
       alert("Ce tag est associé à des cartes et ne peut pas être supprimé.");
@@ -110,9 +102,6 @@ export class TagFormComponent implements OnInit {
     }
   }
 
-  /**
-   * Close the dialog.
-   */
   onCancel(): void {
     this.dialogRef.close();
   }
